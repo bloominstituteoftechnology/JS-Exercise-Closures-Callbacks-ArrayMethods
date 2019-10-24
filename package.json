@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://codesandbox.io/s/github/{gitHubOrgName}/{gitHubProjectName}?previewwindow=tests",
+  "homepage": "https://codesandbox.io/s/github/LambdaSchool/JS-Exercise-Closures-Callbacks-ArrayMethods?previewwindow=browser",
   "repository": {
-    "url": "git@github.com:{gitHubOrgName}/{gitHubProjectName}.git",
+    "url": "git@github.com:LambdaSchool/JS-Exercise-Closures-Callbacks-ArrayMethods.git",
     "type": "git"
   },
   "scripts": {
@@ -13,7 +13,7 @@
     "start": "NODE_OPTIONS=--no-warnings ./node_modules/.bin/mocha ./test",
     "pretest": "NODE_OPTIONS=--no-warnings npm install > /dev/null",
     "test": "NODE_OPTIONS=--no-warnings ./node_modules/.bin/mocha ./test",
-    "test:watch": "./node_modules/.bin/mocha --growl --reporter=list --bail --watch './test'"
+    "test:watch": "./node_modules/.bin/mocha --growl --reporter=list --watch './test'"
   },
   "keywords": [
     "object",
@@ -22,7 +22,6 @@
     "exercises",
     "workout"
   ],
-  "author": "Dan Levy",
   "license": "MIT",
   "dependencies": {
     "chai": "^4.2.0",
