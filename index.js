@@ -8,7 +8,7 @@
  * It takes two arguments:
  * @param stringList an array of strings.
  * @param callback that takes a string as its argument.
- * @returns the result of invoking the callback with the FIRST element in the array.
+ * @returns the result of invoking `callback` with the FIRST element in `stringList`.
  * 
  * Example of usage of this higher-order function:
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
@@ -33,7 +33,7 @@ function processFirstItem(stringList, callback) {
  * It takes two arguments:
  * @param list an array with elements of any type.
  * @param callback that takes a number as its argument.
- * @returns the result of invoking the callback passing the LENGTH of the array.
+ * @returns the result of invoking `callback` passing the LENGTH of `list`.
  * 
  * Examples of usage of this higher-order function:
  * [1] Invoking `processLength` passing `['foo', 'bar']` and `(num) => num + 1000`,
@@ -54,7 +54,7 @@ function processLength(list, callback) {
  * It takes two arguments:
  * @param stringList an array of strings.
  * @param callback that takes a string as its argument.
- * @returns the result of invoking the callback with the LAST element in the array.
+ * @returns the result of invoking `callback` with the LAST element in `stringList`.
  * 
  * Example of usage of this higher-order function:
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
@@ -62,6 +62,28 @@ function processLength(list, callback) {
 */
 function processLastItem(stringList, callback) {
   return callback(stringList[stringList.length - 1])
+}
+
+/**
+ * ### Challenge `processSum`
+ * 
+ * @instructions
+ * Implement a higher-order function called `processSum`.
+ * It takes two arguments:
+ * @param numberList an array of numbers.
+ * @param callback that takes a number as its argument.
+ * @returns the result of invoking `callback` passing the SUM of all elements in `numberList`.
+ * 
+ * Examples of usage of this higher-order function:
+ * [1] Invoking `processSum` passing `[10, 20, 30]` and `(num) => num + " is a big number!"`,
+ * should return "60 is a big number!".
+ * 
+ * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
+ * should return 1000.
+*/
+function processSum(numberList, callback) {
+  const sum = numberList.reduce((acc, e) => acc + e, 0)
+  return callback(sum)
 }
 
 /// ////// END OF CHALLENGE /////////
@@ -75,4 +97,5 @@ if (typeof exports !== 'undefined') {
   if (processFirstItem) { module.exports.processFirstItem = processFirstItem }
   if (processLength) { module.exports.processLength = processLength }
   if (processLastItem) { module.exports.processLastItem = processLastItem }
+  if (processSum) { module.exports.processSum = processSum }
 }

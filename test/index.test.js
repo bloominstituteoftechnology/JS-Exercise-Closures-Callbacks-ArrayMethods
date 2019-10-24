@@ -15,29 +15,38 @@ if (typeof exports !== "undefined") {
     processFirstItem,
     processLength,
     processLastItem,
+    processSum,
   } = require("../index.js");
 }
 var expect = chai.expect;
 
 describe("processFirstItem()", () => {
   it("works as specified", () => {
-    expect(processFirstItem(['bar', 'baz'], str => str + str)).to.eql('barbar');
-    expect(processFirstItem(['bar', 'baz'], str => str[0])).to.eql('b');
+    expect(processFirstItem(['bar', 'baz'], str => str + str)).to.equal('barbar');
+    expect(processFirstItem(['bar', 'baz'], str => str[0])).to.equal('b');
   });
 });
 
 describe("processLength()", () => {
   it("works as specified", () => {
-    expect(processLength(['bar', 'baz'], n => n * 3)).to.eql(6);
-    expect(processLength(['bar'], n => n * 3)).to.eql(3);
-    expect(processLength([], n => n * 3)).to.eql(0);
+    expect(processLength(['bar', 'baz'], n => n * 3)).to.equal(6);
+    expect(processLength(['bar'], n => n * 3)).to.equal(3);
+    expect(processLength([], n => n * 3)).to.equal(0);
   });
 });
 
 describe("processLastItem()", () => {
   it("works as specified", () => {
-    expect(processLastItem(['bar', 'baz'], str => str + str)).to.eql('bazbaz');
-    expect(processLastItem(['bar', 'foo'], str => str[0])).to.eql('f');
+    expect(processLastItem(['bar', 'baz'], str => str + str)).to.equal('bazbaz');
+    expect(processLastItem(['bar', 'foo'], str => str[0])).to.equal('f');
+  });
+});
+
+describe("processSum()", () => {
+  it("works as specified", () => {
+    expect(processSum([1, 2, 3], n => n + 1000)).to.equal(1006);
+    expect(processSum([1], n => n + 1000)).to.equal(1001);
+    expect(processSum([], n => n + 1000)).to.equal(1000);
   });
 });
 
