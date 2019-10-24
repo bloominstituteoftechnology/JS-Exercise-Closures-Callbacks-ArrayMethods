@@ -16,6 +16,7 @@ if (typeof exports !== "undefined") {
     processLength,
     processLastItem,
     processSum,
+    processProduct,
   } = require("../index.js");
 }
 var expect = chai.expect;
@@ -47,6 +48,13 @@ describe("processSum()", () => {
     expect(processSum([1, 2, 3], n => n + 1000)).to.equal(1006);
     expect(processSum([1], n => n + 1000)).to.equal(1001);
     expect(processSum([], n => n + 1000)).to.equal(1000);
+  });
+});
+
+describe("processProduct()", () => {
+  it("works as specified", () => {
+    expect(processProduct(2, 3, n => n + 1000)).to.equal(1006);
+    expect(processProduct(0, 9, n => n + 1000)).to.equal(1000);
   });
 });
 

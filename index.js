@@ -86,6 +86,28 @@ function processSum(numberList, callback) {
   return callback(sum)
 }
 
+/**
+ * ### Challenge `processProduct`
+ * 
+ * @instructions
+ * Implement a higher-order function called `processProduct`.
+ * It takes three arguments:
+ * @param num1 a number.
+ * @param num2 a number.
+ * @param callback that takes a number as its argument.
+ * @returns the result of invoking `callback` passing the PRODUCT of `num1` and `num2`.
+ * 
+ * Examples of usage of this higher-order function:
+ * [1] Invoking `processProduct` passing 2 and 7 and `(num) => num + " is a big number!"`,
+ * should return "14 is a big number!".
+ * 
+ * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
+ * should return 1000.
+*/
+function processProduct(num1, num2, callback) {
+  return callback(num1 * num2)
+}
+
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
@@ -98,4 +120,5 @@ if (typeof exports !== 'undefined') {
   if (processLength) { module.exports.processLength = processLength }
   if (processLastItem) { module.exports.processLastItem = processLastItem }
   if (processSum) { module.exports.processSum = processSum }
+  if (processProduct) { module.exports.processProduct = processProduct }
 }
