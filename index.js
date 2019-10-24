@@ -7,7 +7,7 @@
  * Implement a higher-order function called `processFirstItem`.
  * It takes two arguments:
  * @param stringList an array of strings.
- * @param callback that takes a string as its argument.
+ * @param callback function that takes a string as its argument.
  * @returns the result of invoking `callback` with the FIRST element in `stringList`.
  * 
  * Example of usage of this higher-order function:
@@ -32,7 +32,7 @@ function processFirstItem(stringList, callback) {
  * Implement a higher-order function called `processLength`.
  * It takes two arguments:
  * @param list an array with elements of any type.
- * @param callback that takes a number as its argument.
+ * @param callback function that takes a number as its argument.
  * @returns the result of invoking `callback` passing the LENGTH of `list`.
  * 
  * Examples of usage of this higher-order function:
@@ -52,8 +52,8 @@ function processLength(list, callback) {
  * @instructions
  * Implement a higher-order function called `processLastItem`.
  * It takes two arguments:
- * @param stringList an array of strings.
- * @param callback that takes a string as its argument.
+ * @param stringList array of strings.
+ * @param callback function that takes a string as its argument.
  * @returns the result of invoking `callback` with the LAST element in `stringList`.
  * 
  * Example of usage of this higher-order function:
@@ -70,8 +70,8 @@ function processLastItem(stringList, callback) {
  * @instructions
  * Implement a higher-order function called `processSum`.
  * It takes two arguments:
- * @param numberList an array of numbers.
- * @param callback that takes a number as its argument.
+ * @param numberList array of numbers.
+ * @param callback function that takes a number as its argument.
  * @returns the result of invoking `callback` passing the SUM of all elements in `numberList`.
  * 
  * Examples of usage of this higher-order function:
@@ -94,7 +94,7 @@ function processSum(numberList, callback) {
  * It takes three arguments:
  * @param num1 a number.
  * @param num2 a number.
- * @param callback that takes a number as its argument.
+ * @param callback function that takes a number as its argument.
  * @returns the result of invoking `callback` passing the PRODUCT of `num1` and `num2`.
  * 
  * Examples of usage of this higher-order function:
@@ -116,7 +116,7 @@ function processProduct(num1, num2, callback) {
  * It takes three arguments:
  * @param item of any kind.
  * @param list array of elements of any kind.
- * @param callback that takes a boolean as its argument.
+ * @param callback function that takes a boolean as its argument.
  * @returns the result of invoking `callback` passing true if `item` exists in `list`, false otherwise.
  * 
  * Examples of usage of this higher-order function:
@@ -130,6 +130,30 @@ function processProduct(num1, num2, callback) {
 */
 function processContains(item, list, callback) {
   return callback(list.includes(item))
+}
+
+/**
+ * ### Challenge `processDuplicateFree`
+ * THIS IS A STRETCH PROBLEM!
+ * 
+ * @instructions
+ * Implement a higher-order function called `processDuplicateFree`.
+ * It takes two arguments:
+ * @param list array of elements of any kind.
+ * @param callback function that takes an array as its argument.
+ * @returns the result of invoking `callback` passing a de-duped version of `list`.
+ * 
+ * Examples of usage of this higher-order function:
+ * [1] Invoking `processDuplicateFree` passing [1,1,1,2] and `(arr) => arr`,
+ * should return `[1, 2]`.
+ * 
+ * [2] Invoking `processDuplicateFree` passing [1,1,2,2,3] and `(arr) => arr.length`,
+ * should return 3.
+*/
+function processDuplicateFree(list, callback) {
+  const set = new Set(list);
+  const dupeFree = Array.from(set);
+  return callback(dupeFree);
 }
 
 /// ////// END OF CHALLENGE /////////
@@ -146,4 +170,5 @@ if (typeof exports !== 'undefined') {
   if (processSum) { module.exports.processSum = processSum }
   if (processProduct) { module.exports.processProduct = processProduct }
   if (processContains) { module.exports.processContains = processContains }
+  if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
 }

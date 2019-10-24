@@ -18,6 +18,7 @@ if (typeof exports !== "undefined") {
     processSum,
     processProduct,
     processContains,
+    processDuplicateFree,
   } = require("../index.js");
 }
 var expect = chai.expect;
@@ -66,6 +67,18 @@ describe("processContains()", () => {
     expect(processContains({}, [{}], b => b)).to.equal(false);
     expect(processContains(2, [1, 2], b => b)).to.equal(true);
     expect(processContains(1, [2, 3], b => b)).to.equal(false);
+  });
+});
+
+describe("processDuplicateFree()", () => {
+  it("works as specified", () => {
+    const arr = [1, 2, 3, 4, 4, 5, 6, 7, 7, 7]
+    const arr2 = [1, 2, 3]
+    const expected = [1, 2, 3, 4, 5, 6, 7]
+    const cb = (list) => list
+    expect(processDuplicateFree(arr2, cb)).to.eql(arr2);
+    expect(processDuplicateFree(arr, cb)).to.eql(expected);
+    expect(processDuplicateFree([], cb)).to.eql([]);
   });
 });
 
