@@ -108,6 +108,30 @@ function processProduct(num1, num2, callback) {
   return callback(num1 * num2)
 }
 
+/**
+ * ### Challenge `processContains`
+ * 
+ * @instructions
+ * Implement a higher-order function called `processContains`.
+ * It takes three arguments:
+ * @param item of any kind.
+ * @param list array of elements of any kind.
+ * @param callback that takes a boolean as its argument.
+ * @returns the result of invoking `callback` passing true if `item` exists in `list`, false otherwise.
+ * 
+ * Examples of usage of this higher-order function:
+ * [1] Invoking `processContains` passing
+ * "foo" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`
+ * should return "nice!".
+ * 
+ * [2] Invoking `processContains` passing
+ * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
+ * should return "sad".
+*/
+function processContains(item, list, callback) {
+  return callback(list.includes(item))
+}
+
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
@@ -121,4 +145,5 @@ if (typeof exports !== 'undefined') {
   if (processLastItem) { module.exports.processLastItem = processLastItem }
   if (processSum) { module.exports.processSum = processSum }
   if (processProduct) { module.exports.processProduct = processProduct }
+  if (processContains) { module.exports.processContains = processContains }
 }
