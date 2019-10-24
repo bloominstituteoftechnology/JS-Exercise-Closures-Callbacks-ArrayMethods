@@ -13,28 +13,23 @@ if (typeof exports !== "undefined") {
 
   var {
     firstItem,
-    makePersonObject,
-    getName,
-    makeSmartPerson,
-    carMaker,
-    getCarInfoByIndex,
-    getLastCarInfo,
-    getCarInfoById,
-    sortCarInventory,
-    getModelYears,
-    getOlderCars,
-    getGermanCars,
-    sumF,
-    addFiveF,
-    argTimesTwoF
+    processLength,
   } = require("../index.js");
 }
 var expect = chai.expect;
 
 describe("firstItem()", () => {
-  it("can add two numbers", () => {
+  it("works as specified", () => {
     expect(firstItem(['bar', 'baz'], str => str + str)).to.eql('barbar');
     expect(firstItem(['bar', 'baz'], str => str[0])).to.eql('b');
+  });
+});
+
+describe("processLength()", () => {
+  it("works as specified", () => {
+    expect(processLength(['bar', 'baz'], n => n * 3)).to.eql(6);
+    expect(processLength(['bar'], n => n * 3)).to.eql(3);
+    expect(processLength([], n => n * 3)).to.eql(0);
   });
 });
 
