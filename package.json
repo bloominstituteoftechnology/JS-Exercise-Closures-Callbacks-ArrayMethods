@@ -1,7 +1,7 @@
 {
-  "name": "exercises-template",
+  "name": "closures-callbacks-array-methods",
   "version": "1.0.0",
-  "description": "TODO: REPLACE ALL {gitHubOrgName} AND {gitHubProjectName} BELOW",
+  "description": "",
   "main": "index.js",
   "homepage": "https://codesandbox.io/s/github/{gitHubOrgName}/{gitHubProjectName}?previewwindow=tests",
   "repository": {
@@ -27,14 +27,14 @@
   "dependencies": {
     "chai": "^4.2.0",
     "esm": "^3.2.25",
-    "mocha": "^6.1.4",
+    "mocha": "^6.2.2",
     "mocha-junit-reporter": "^1.23.1",
     "mocha-multi-reporters": "^1.1.7",
     "test": "^0.6.0"
   },
   "devDependencies": {
-    "eslint": "^5.16.0",
+    "eslint": "^6.5.1",
     "growl": "^1.10.5",
-    "lite-server": "^2.5.3"
+    "lite-server": "^2.5.4"
   }
 }
