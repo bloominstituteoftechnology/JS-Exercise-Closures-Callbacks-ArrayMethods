@@ -12,16 +12,17 @@ if (typeof exports !== "undefined") {
   var chai = require("chai");
 
   var {
-    firstItem,
+    processFirstItem,
     processLength,
+    processLastItem,
   } = require("../index.js");
 }
 var expect = chai.expect;
 
-describe("firstItem()", () => {
+describe("processFirstItem()", () => {
   it("works as specified", () => {
-    expect(firstItem(['bar', 'baz'], str => str + str)).to.eql('barbar');
-    expect(firstItem(['bar', 'baz'], str => str[0])).to.eql('b');
+    expect(processFirstItem(['bar', 'baz'], str => str + str)).to.eql('barbar');
+    expect(processFirstItem(['bar', 'baz'], str => str[0])).to.eql('b');
   });
 });
 
@@ -30,6 +31,13 @@ describe("processLength()", () => {
     expect(processLength(['bar', 'baz'], n => n * 3)).to.eql(6);
     expect(processLength(['bar'], n => n * 3)).to.eql(3);
     expect(processLength([], n => n * 3)).to.eql(0);
+  });
+});
+
+describe("processLastItem()", () => {
+  it("works as specified", () => {
+    expect(processLastItem(['bar', 'baz'], str => str + str)).to.eql('bazbaz');
+    expect(processLastItem(['bar', 'foo'], str => str[0])).to.eql('f');
   });
 });
 
