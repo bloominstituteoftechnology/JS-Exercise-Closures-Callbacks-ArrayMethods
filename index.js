@@ -6,10 +6,9 @@
  * @instructions
  * Implement a higher-order function called `firstItem`.
  * It takes two arguments:
- * @param {string[]} stringList an array of strings.
- * @param {Function} callback that takes a single string as its argument.
- * It returns:
- * @returns {*} the result of invoking the callback with the first element in the array.
+ * @param stringList an array of strings.
+ * @param callback that takes a single string as its argument.
+ * @returns the result of invoking the callback with the first element in the array.
  * 
  * Example of usage of this higher-order function:
  * Invoking `firstItem` passing `['foo', 'bar']` and `(str) => str + str`,
