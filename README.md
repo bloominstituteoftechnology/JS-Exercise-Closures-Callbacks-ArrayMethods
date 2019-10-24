@@ -1,6 +1,6 @@
 # JS-Exercise-Closures-Callbacks-ArrayMethods
 
-This challenge focuses on closures, callbacks and Array methods.
+This challenge focuses on closures, callbacks and array methods.
 
 If you run into trouble while coding, fight the good fight for 20 minutes and then get on the help channel. __Remember to formulate your help request in a professional manner__ - like you would at work - by including error messages, screenshots, and any other pertinent information about the problem, as well as what kinds of things you tried already while attempting to solve it.
 
