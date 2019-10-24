@@ -25,6 +25,8 @@ function processFirstItem(stringList, callback) {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
+/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
+
 /**
  * ### Challenge `processLength`
  * 
@@ -156,6 +158,27 @@ function processDuplicateFree(list, callback) {
   return callback(dupeFree);
 }
 
+/////////////// HIGHER-ORDER ARRAY METHODS ///////////////
+
+// A local community center is holding a fund raising 5k fun run and has invited
+// 50 small businesses to make a small donation on their behalf for some much needed
+// updates to their facilities. Each business has assigned a representative
+// to attend the event along with a small donation.
+
+/**
+ * ### Challenge `getFullNames`
+ * 
+ * @instructions
+ * Implement a function called `getFullNames` using forEach().
+ * It takes one argument:
+ * @param runners array of runners like the one inside the /data/runners.js file.
+ * @returns an array with all the runners' full names in the following format: "Smith, John".
+ * The full names should appear in the same order as the runners appear in the `runners` array.
+*/
+function getFullNames(runners) {
+  return runners.map(r => `${r.last_name}, ${r.first_name}`)
+}
+
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
@@ -171,4 +194,5 @@ if (typeof exports !== 'undefined') {
   if (processProduct) { module.exports.processProduct = processProduct }
   if (processContains) { module.exports.processContains = processContains }
   if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
+  if (getFullNames) { module.exports.getFullNames = getFullNames }
 }

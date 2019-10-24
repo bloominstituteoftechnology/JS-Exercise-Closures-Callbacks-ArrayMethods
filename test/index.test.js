@@ -10,6 +10,7 @@ if (typeof exports !== "undefined") {
   // Node/Non-browser test env
 
   var chai = require("chai");
+  var runners = require('../data/runners');
 
   var {
     processFirstItem,
@@ -19,6 +20,7 @@ if (typeof exports !== "undefined") {
     processProduct,
     processContains,
     processDuplicateFree,
+    getFullNames,
   } = require("../index.js");
 }
 var expect = chai.expect;
@@ -79,6 +81,14 @@ describe("processDuplicateFree()", () => {
     expect(processDuplicateFree(arr2, cb)).to.eql(arr2);
     expect(processDuplicateFree(arr, cb)).to.eql(expected);
     expect(processDuplicateFree([], cb)).to.eql([]);
+  });
+});
+
+describe("getFullNames()", () => {
+  it("returns an array of strings in the `<last-name>, <first-name>` format", () => {
+    expect(getFullNames(runners).length).to.equal(runners.length);
+    expect(getFullNames(runners)[0]).to.equal('Seiler, Charmain');
+    expect(getFullNames(runners)[runners.length - 1]).to.equal('Baine, Shell');
   });
 });
 
