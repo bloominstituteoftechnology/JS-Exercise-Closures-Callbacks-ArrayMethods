@@ -2,7 +2,23 @@
 
 This challenge focuses on closures, callbacks and array methods.
 
-Use the combined power of the [MDN web docs](https://developer.mozilla.org/en-US/) and Google! For example, in order to learn about the reduce array method, nice Google search terms might be _mdn array reduce_ or _reduce site:mozilla.org_. If you run into trouble while coding, fight the good fight for 20 minutes and then get on the help channel. __Remember to formulate your help request in a professional manner__ - like you would at the job - by including error messages, screenshots, and any other pertinent information about the problem, as well as what things you have attempted already while trying to solve it.
+You are encouraged to use the [MDN website](https://developer.mozilla.org/en-US/) as well as Google, to figure things out.
+
+Use Google effectively! For example, let's say you want to learn more about the `reduce` array method. Here are some Google searches you could try:
+```
+  mdn array reduce
+```
+```
+  array.prototype.reduce
+```
+```
+  reduce site:mozilla.org
+```
+```
+  javascript reduce site:stackoverflow.com
+```
+
+If you run into trouble while coding, fight the good fight for 20 minutes and then get on the help channel. __Remember to formulate your help request in a professional manner__ - like you would at the job - by including error messages, screenshots, and any other pertinent information about the problem, as well as what things you have attempted already while trying to solve it.
 
 ##### Index
 
