@@ -239,7 +239,7 @@ function tallyUpDonations(runners) {
  * ### Challenge `counterMaker`
  * 
  * @instructions
- * Fix this function so counters produce with it increment correctly!
+ * Fix this function so a counter produced with it will increment correctly!
  * Usage is as follows:
  * 
  * const counter = counterMaker()
@@ -260,7 +260,7 @@ function counterMaker() {
  * 
  * @instructions
  * Implement a counter maker that takes a max value for the count.
- * Counters created with it will reset themselves after max value is reached.
+ * A counter created with it will reset itself after reaching the max value.
  * Usage is as follows:
  * 
  * const counter = counterMakerWithLimit(3)
@@ -274,10 +274,9 @@ function counterMaker() {
  * counter() // should return 3
  * counter() // should return 0
  * etc
- * 
 */
 function counterMakerWithLimit(maxCount) {
-  let count = -1;
+  let count = -1
   return function () {
     if (count === maxCount) {
       count = -1
