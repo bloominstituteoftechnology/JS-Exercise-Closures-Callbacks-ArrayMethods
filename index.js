@@ -241,7 +241,7 @@ function tallyUpDonations(/* CODE HERE */) {
  * counter() // should return 0
  * counter() // should return 1
  * counter() // should return 2
- * 
+ * etc
 */
 function counterMaker() {
   // BROKEN CODE STARTS
