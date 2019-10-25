@@ -170,9 +170,10 @@ function processDuplicateFree(list, callback) {
  * 
  * @instructions
  * Implement a function called `getFullNames` using forEach().
+ * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' full names in the following format: "Smith, John".
- * The full names should appear in the same order as the runners appear in the `runners` array.
+ * The full names appear in the same order as the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
   const result = runners.map(r => `${r.last_name}, ${r.first_name}`)
@@ -186,9 +187,10 @@ function getFullNames(runners) {
  * The event director needs to have all the runners' first names 
  * in uppercase because the director BECAME DRUNK WITH POWER.
  * Implement a function called `firstNamesAllCaps` using map().
+ * 
  * @param runners array of runners like the one inside the /data/runners.js file.
- * @returns an array with all the runners' first name in the following format: "JOHN".
- * The names should appear in the same order as the runners appear in the `runners` array.
+ * @returns an array with all the runners' first names in ALL CAPS.
+ * The names appear in the same order as the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
   const result = runners.map(r => r.first_name.toUpperCase())
