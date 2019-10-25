@@ -32,6 +32,7 @@ function processFirstItem(stringList, callback) {
  * ### Challenge `processLength`
  * 
  * @instructions
+ * PLEASE READ THE EXAMPLE CHALLENGE THOROUGHLY BEFORE STARTING!
  * Implement a higher-order function called `processLength`.
  * It takes two arguments:
  * @param list an array with elements of any type.
