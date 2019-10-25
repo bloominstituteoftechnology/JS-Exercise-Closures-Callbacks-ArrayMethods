@@ -18,7 +18,7 @@ Use Google effectively! For example, let's say you want to learn more about the 
   javascript reduce site:stackoverflow.com
 ```
 
-Commit often! **Plan to commit & push every time you get a new test passing**. This makes it SO much easier to figure out "what broke it", and helps your TL keep track of how you're doing.
+Commit often! **Plan to commit & push every time you get a new test passing**. This makes it SO much easier to figure out "what broke my code", and helps your TL keep track of how you're doing.
 
 If you run into trouble while coding, fight the good fight for 20 minutes and then get on the help channel. __Remember to formulate your help request in a professional manner__ - like you would at the job - by including error messages, screenshots, and any other pertinent information about the problem, as well as what things you have attempted already while trying to solve it.
 
