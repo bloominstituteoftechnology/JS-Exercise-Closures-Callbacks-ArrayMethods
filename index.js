@@ -169,7 +169,7 @@ function processDuplicateFree(list, callback) {
  * ### Challenge `getFullNames`
  * 
  * @instructions
- * Implement a function called `getFullNames` using forEach().
+ * Implement this function using forEach().
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' full names in the following format: "Smith, John".
@@ -186,7 +186,7 @@ function getFullNames(runners) {
  * @instructions
  * The event director needs to have all the runners' first names 
  * in uppercase because the director BECAME DRUNK WITH POWER.
- * Implement a function called `firstNamesAllCaps` using map().
+ * Implement this function using map().
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' first names in ALL CAPS.
@@ -203,7 +203,7 @@ function firstNamesAllCaps(runners) {
  * @instructions
  * The event director needs a way to find the runners that need
  * a specific t-shirt size, so he can place the orders easily.
- * Implement a function called `getRunnersByTShirtSize` using filter().
+ * Implement this function using filter().
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @param tShirtSize string (possible values are "S", "M", "L", "XL", "2XL", "3XL").
@@ -220,7 +220,7 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * 
  * @instructions
  * The donations need to be tallied up and reported for tax purposes.
- * Implement a function called `tallyUpDonations` using reduce().
+ * Implement this function using reduce().
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
