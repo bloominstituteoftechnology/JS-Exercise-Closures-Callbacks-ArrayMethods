@@ -32,8 +32,8 @@ function processFirstItem(stringList, callback) {
  * ### Challenge `processLength`
  * 
  * @instructions
- * PLEASE READ THE EXAMPLE CHALLENGE THOROUGHLY BEFORE PROCEEDING!
- * PLEASE READ THE EXAMPLE CHALLENGE THOROUGHLY BEFORE PROCEEDING!
+ * PLEASE STUDY THE EXAMPLE CHALLENGE THOROUGHLY BEFORE PROCEEDING!
+ * PLEASE STUDY THE EXAMPLE CHALLENGE THOROUGHLY BEFORE PROCEEDING!
  * 
  * Implement a higher-order function called `processLength`.
  * It takes two arguments:
