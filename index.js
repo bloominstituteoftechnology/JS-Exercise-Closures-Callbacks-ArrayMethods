@@ -177,7 +177,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' full names in the following format: "Smith, John".
- * The full names appear in the same order as the runners appear in the `runners` array.
+ * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(/* CODE HERE */) {
   /* CODE HERE */
@@ -193,7 +193,7 @@ function getFullNames(/* CODE HERE */) {
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' first names in ALL CAPS.
- * The names appear in the same order as the runners appear in the `runners` array.
+ * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(/* CODE HERE */) {
   /* CODE HERE */
@@ -210,7 +210,7 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @param tShirtSize string (possible values are "S", "M", "L", "XL", "2XL", "3XL").
  * @returns an array containing only the runners that use the given `tShirtSize`.
- * The runners appear in the same order as they appear in the `runners` array.
+ * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(/* CODE HERE */) {
   /* CODE HERE */
