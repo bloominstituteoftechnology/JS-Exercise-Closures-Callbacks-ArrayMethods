@@ -179,6 +179,22 @@ function getFullNames(runners) {
   return result
 }
 
+/**
+ * ### Challenge `firstNamesAllCaps`
+ * 
+ * @instructions
+ * The event director needs to have all the runners' first names 
+ * in uppercase because the director BECAME DRUNK WITH POWER.
+ * Implement a function called `firstNamesAllCaps` using map().
+ * @param runners array of runners like the one inside the /data/runners.js file.
+ * @returns an array with all the runners' first name in the following format: "JOHN".
+ * The names should appear in the same order as the runners appear in the `runners` array.
+*/
+function firstNamesAllCaps(runners) {
+  const result = runners.map(r => r.first_name.toUpperCase())
+  return result
+}
+
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
@@ -195,4 +211,5 @@ if (typeof exports !== 'undefined') {
   if (processContains) { module.exports.processContains = processContains }
   if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
   if (getFullNames) { module.exports.getFullNames = getFullNames }
+  if (firstNamesAllCaps) { module.exports.firstNamesAllCaps = firstNamesAllCaps }
 }
