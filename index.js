@@ -204,7 +204,7 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * 
  * @instructions
  * The event director needs a way to find the runners that need
- * a specific t-shirt size, so he can place the orders easily.
+ * a specific t-shirt size, so they can place the orders easily.
  * Implement this function using filter().
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
