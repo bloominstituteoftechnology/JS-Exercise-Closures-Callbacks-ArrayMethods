@@ -85,8 +85,13 @@ describe("processDuplicateFree()", () => {
 });
 
 describe("getFullNames()", () => {
-  it("returns an array of strings in the `<last-name>, <first-name>` format", () => {
+  it("returns an array of strings", () => {
+    expect(getFullNames(runners).every(r => typeof r === 'string')).to.equal(true);
+  });
+  it("returns an array of the same length as the original array", () => {
     expect(getFullNames(runners).length).to.equal(runners.length);
+  });
+  it("the strings in the array have the `<last-name>, <first-name>` format", () => {
     expect(getFullNames(runners)[0]).to.equal('Seiler, Charmain');
     expect(getFullNames(runners)[runners.length - 1]).to.equal('Baine, Shell');
   });

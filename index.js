@@ -170,13 +170,13 @@ function processDuplicateFree(list, callback) {
  * 
  * @instructions
  * Implement a function called `getFullNames` using forEach().
- * It takes one argument:
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names should appear in the same order as the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
-  return runners.map(r => `${r.last_name}, ${r.first_name}`)
+  const result = runners.map(r => `${r.last_name}, ${r.first_name}`)
+  return result
 }
 
 /// ////// END OF CHALLENGE /////////
