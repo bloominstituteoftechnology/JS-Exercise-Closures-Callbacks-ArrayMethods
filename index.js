@@ -197,6 +197,39 @@ function firstNamesAllCaps(runners) {
   return result
 }
 
+/**
+ * ### Challenge `getRunnersByTShirtSize`
+ * 
+ * @instructions
+ * The event director needs a way to find the runners that need
+ * a specific t-shirt size, so he can place the orders easily.
+ * Implement a function called `getRunnersByTShirtSize` using filter().
+ * 
+ * @param runners array of runners like the one inside the /data/runners.js file.
+ * @param tShirtSize string (possible values are "S", "M", "L", "XL", "2XL", "3XL").
+ * @returns an array containing only the runners that use the given `tShirtSize`.
+ * The runners appear in the same order as they appear in the `runners` array.
+*/
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  const result = runners.filter(r => r.shirt_size === tShirtSize)
+  return result
+}
+
+/**
+ * ### Challenge `tallyUpDonations`
+ * 
+ * @instructions
+ * The donations need to be tallied up and reported for tax purposes.
+ * Implement a function called `tallyUpDonations` using reduce().
+ * 
+ * @param runners array of runners like the one inside the /data/runners.js file.
+ * @returns a number which is the sum of the donations by all runners.
+*/
+function tallyUpDonations(runners) {
+  const result = runners.reduce((acc, e) => acc + e.donation, 0)
+  return result
+}
+
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
 /// ////// END OF CHALLENGE /////////
@@ -214,4 +247,6 @@ if (typeof exports !== 'undefined') {
   if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
   if (getFullNames) { module.exports.getFullNames = getFullNames }
   if (firstNamesAllCaps) { module.exports.firstNamesAllCaps = firstNamesAllCaps }
+  if (getRunnersByTShirtSize) { module.exports.getRunnersByTShirtSize = getRunnersByTShirtSize }
+  if (tallyUpDonations) { module.exports.tallyUpDonations = tallyUpDonations }
 }

@@ -22,6 +22,8 @@ if (typeof exports !== "undefined") {
     processDuplicateFree,
     getFullNames,
     firstNamesAllCaps,
+    getRunnersByTShirtSize,
+    tallyUpDonations,
   } = require("../index.js");
 }
 var expect = chai.expect;
@@ -108,6 +110,32 @@ describe("firstNamesAllCaps()", () => {
   it("the strings in the array ARE ALL CAPS", () => {
     expect(firstNamesAllCaps(runners)[0]).to.equal('CHARMAIN');
     expect(firstNamesAllCaps(runners)[runners.length - 1]).to.equal('SHELL');
+  });
+});
+
+describe("getRunnersByTShirtSize()", () => {
+  it("returns an array of runners of a given shirt size", () => {
+    expect(getRunnersByTShirtSize(runners, 'S').every(r => r.shirt_size === 'S')).to.equal(true);
+  });
+  it("returns an array of the correct length", () => {
+    expect(getRunnersByTShirtSize(runners, 'S').length).to.equal(11);
+    expect(getRunnersByTShirtSize(runners, '3XL').length).to.equal(7);
+  });
+});
+
+describe("tallyUpDonations()", () => {
+  it("returns 0 for an empty runners array", () => {
+    expect(tallyUpDonations([])).to.equal(0);
+  });
+  it("returns the expected amount for a small dataset", () => {
+    expect(tallyUpDonations([
+      { donation: 1 },
+      { donation: 2 },
+      { donation: 3 },
+    ])).to.equal(6);
+  });
+  it("returns the expected amount for the runners array", () => {
+    expect(tallyUpDonations(runners)).to.equal(7043);
   });
 });
 

@@ -1,3 +1,9 @@
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+
 module.exports = [
   { id: 1, first_name: "Charmain", last_name: "Seiler", email: "cseiler0@wired.com", shirt_size: "2XL", company_name: "Divanoodle", donation: 75 },
   { id: 2, first_name: "Whitaker", last_name: "Ierland", email: "wierland1@angelfire.com", shirt_size: "2XL", company_name: "Wordtune", donation: 148 },
@@ -50,3 +56,9 @@ module.exports = [
   { id: 49, first_name: "Bel", last_name: "Alway", email: "balway1c@ow.ly", shirt_size: "S", company_name: "Voolia", donation: 107 },
   { id: 50, first_name: "Shell", last_name: "Baine", email: "sbaine1d@intel.com", shirt_size: "M", company_name: "Gabtype", donation: 171 },
 ]
+
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
+////// STUDENTS: DO NOT MODIFY THIS FILE //////
