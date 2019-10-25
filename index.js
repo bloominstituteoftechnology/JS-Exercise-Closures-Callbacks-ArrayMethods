@@ -26,6 +26,7 @@ function processFirstItem(stringList, callback) {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
 /////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
+/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
 
 /**
  * ### Challenge `processLength`
@@ -159,6 +160,7 @@ function processDuplicateFree(list, callback) {
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
+/////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
@@ -230,9 +232,63 @@ function tallyUpDonations(runners) {
   return result
 }
 
-/// ////// END OF CHALLENGE /////////
-/// ////// END OF CHALLENGE /////////
-/// ////// END OF CHALLENGE /////////
+/////////////// CLOSURES ///////////////
+/////////////// CLOSURES ///////////////
+
+/**
+ * ### Challenge `counterMaker`
+ * 
+ * @instructions
+ * Fix this function so counters produce with it increment correctly!
+ * Usage is as follows:
+ * 
+ * const counter = counterMaker()
+ * counter() // should return 0
+ * counter() // should return 1
+ * counter() // should return 2
+ * 
+*/
+function counterMaker() {
+  let count = -1;
+  return function () {
+    return ++count
+  }
+}
+
+/**
+ * ### Challenge `counterMakerWithLimit`
+ * 
+ * @instructions
+ * Implement a counter maker that takes a max value for the count.
+ * Counters created with it will reset themselves after max value is reached.
+ * Usage is as follows:
+ * 
+ * const counter = counterMakerWithLimit(3)
+ * counter() // should return 0
+ * counter() // should return 1
+ * counter() // should return 2
+ * counter() // should return 3
+ * counter() // should return 0
+ * counter() // should return 1
+ * counter() // should return 2
+ * counter() // should return 3
+ * counter() // should return 0
+ * etc
+ * 
+*/
+function counterMakerWithLimit(maxCount) {
+  let count = -1;
+  return function () {
+    if (count === maxCount) {
+      count = -1
+    }
+    return ++count
+  }
+}
+
+/////////////// END OF CHALLENGE ///////////////
+/////////////// END OF CHALLENGE ///////////////
+/////////////// END OF CHALLENGE ///////////////
 
 if (typeof exports !== 'undefined') {
   // IGNORE: Test/Env Detected
@@ -249,4 +305,6 @@ if (typeof exports !== 'undefined') {
   if (firstNamesAllCaps) { module.exports.firstNamesAllCaps = firstNamesAllCaps }
   if (getRunnersByTShirtSize) { module.exports.getRunnersByTShirtSize = getRunnersByTShirtSize }
   if (tallyUpDonations) { module.exports.tallyUpDonations = tallyUpDonations }
+  if (counterMaker) { module.exports.counterMaker = counterMaker }
+  if (counterMakerWithLimit) { module.exports.counterMakerWithLimit = counterMakerWithLimit }
 }
