@@ -27,7 +27,7 @@ If you run into trouble while coding, fight the good fight for 20 minutes and th
 
 ## Instructions
 
-Find the file `index.js` and complete the tasks until all of your tests pass.
+Find the file `index.js` and complete the tasks until your tests are passing. One of the tests corresponds to a stretch task! Attempt the stretch task only after completing all other tasks.
 
 ## Get Started
 
