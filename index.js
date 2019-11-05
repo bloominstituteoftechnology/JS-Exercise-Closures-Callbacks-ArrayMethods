@@ -177,8 +177,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  const fullNames = [];
+  runners.map(runners => fullNames.push(`${runners.last_name}, ${runners.first_name}`));
+  return fullNames;
 }
 
 /**
@@ -193,10 +195,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  const namesInCaps = [];
+  runners.map(runners => namesInCaps.push(`${runners.first_name}.toUppercase`));
+  return namesInCaps;
 }
-
 /**
  * ### Challenge `getRunnersByTShirtSize`
  *
@@ -210,9 +213,13 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let shirtSelection = runners.filter(runner => {
+    return runner.shirt_size === tShirtSize;
+  })
+  return shirtSelection;
 }
+
 
 /**
  * ### Challenge `tallyUpDonations`
@@ -224,8 +231,9 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  let donationsSum = runners.reduce((acc, donation) => acc + donation, 0);
+    return donationsSum;
 }
 
 /////////////// CLOSURES ///////////////
