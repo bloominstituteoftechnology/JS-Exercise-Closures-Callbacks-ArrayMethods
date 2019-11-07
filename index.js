@@ -161,7 +161,8 @@ function processContains(item, list, callback) {
  * should return 3.
 */
 function processDuplicateFree(list, callback) {
- callback(list.map());
+ 
+ callback(list.map(x => list.push(list.includes(x) !== true)));
 
 }
 
@@ -185,8 +186,9 @@ function processDuplicateFree(list, callback) {
 */
 function getFullNames(runners) {
   
-  return runners.forEach(runners.last_name + ", " + runners.first_name);
-  
+let newrunnerarray = [];
+runners.forEach(x => newrunnerarray.push(x.last_name + ", " + x.first_name));
+return newrunnerarray;
 }
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -201,7 +203,8 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
- return runners.map(runners.first_name.toUpperCase());
+ return runners.map(x => x.first_name.toUpperCase());
+
 }
 
 /**
@@ -218,7 +221,7 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  return runners.filter(runners.shirt_size === tShirtSize);
+  return runners.filter(x => x.shirt_size === tShirtSize);
 }
 
 /**
@@ -232,7 +235,10 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(runners) {
-  /* CODE HERE */
+ return runners.reduce((total, array) => {
+   return total + array.donation;
+ }, 0);
+
 }
 
 /////////////// CLOSURES ///////////////
