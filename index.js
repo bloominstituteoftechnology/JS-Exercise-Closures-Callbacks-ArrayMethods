@@ -87,8 +87,9 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+  let sumOfList = numberList.reduce(((accum, currVal) => accum + currVal), 0);
+  return callback(sumOfList);
 }
 
 /**
@@ -109,8 +110,9 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  let product = num1 * num2;
+  return callback(product);
 }
 
 /**
@@ -133,8 +135,21 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+function processContains(item, list, callback) {
+  let contains = 0;
+  for (let i = 0; i < list.length; i++) {
+    if (item === list[i]) {
+      contains = contains + 1;
+    } else {
+      contains = contains + 0;
+    }
+  }
+
+  if (contains === 1) {
+    return callback(true)
+  } else {
+    return callback(false)
+  }
 }
 
 /**
@@ -178,8 +193,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  let nameList = [];
+  runners.forEach((arr) => nameList.push (`${arr.last_name}, ${arr.first_name}`))
+
+  return nameList;
 }
 
 /**
@@ -194,8 +212,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let capFirstNames = runners.map(function(runners) {
+    return runners.first_name.toUpperCase();
+  });
+  return capFirstNames;
 }
 
 /**
