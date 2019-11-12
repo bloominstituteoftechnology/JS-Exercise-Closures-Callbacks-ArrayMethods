@@ -277,7 +277,7 @@ function counterMaker() {
   };
 }
   // BROKEN CODE ENDS
-
+//
 
 /**
  * ### Challenge `counterMakerWithLimit`
