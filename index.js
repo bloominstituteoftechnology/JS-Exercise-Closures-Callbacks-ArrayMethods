@@ -289,8 +289,15 @@ counterMaker();
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+  let count = 0;
+  function counter(){
+    for(let i=0; i<=limit;i++)
+    if(i === limit){
+      return count++
+    }
+  }
+  return counter;
 }
 
 /////////////// END OF CHALLENGE ///////////////
