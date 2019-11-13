@@ -289,17 +289,27 @@ counterMaker();
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(limit) {
+// //function counterMakerWithLimit(limit) {
+//   let count = 0;
+//   function counter(){
+//     for(let i=0; i<=limit;i++)
+//     if(i === limit){
+//       return count++
+//     }
+//   }
+//   return counter;
+// }
+function counterMakerWithLimit(limit){
   let count = 0;
-  function counter(){
-    for(let i=0; i<=limit;i++)
-    if(i === limit){
+  return function(){
+    if(count <= limit){
       return count++
+    } else{
+      count = 0;
     }
+   return count++;
   }
-  return counter;
 }
-
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
