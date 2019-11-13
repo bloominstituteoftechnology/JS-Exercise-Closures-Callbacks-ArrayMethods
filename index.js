@@ -138,8 +138,9 @@ function processProduct(num1,num2,callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(item,list,callback) {
   /* CODE HERE */
+  return callback(list.includes(item));
 }
 
 /**
@@ -161,8 +162,11 @@ function processContains(/* CODE HERE */) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list,callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  return callback(list.filter((item,index) => {
+    return list.indexOf(item) === index
+  }))
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -183,8 +187,18 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+
+  let arr = [];
+
+  runners.forEach(function(runners){
+    return arr.push(`${runners.last_name}, ${runners.first_name}`);
+
+
+  }
+  )
+  return arr;
 }
 
 /**
@@ -199,8 +213,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
+    return runners.map(function(caps){
+  return caps.first_name.toUpperCase()})
+
 }
 
 /**
@@ -298,12 +315,18 @@ function counterMakerWithLimit(maxvalue) {
   /* CODE HERE */
   let count = 0;
   function counter() {
-   for(let i=0; i <= maxvalue; i++)
-    return count++
-    if (count == maxvalue - 1){
-       count = 0;
+    if(count <= maxvalue) {
+      //  block of code to be executed if the condition is true
+      return count++;
+    } else {
+      count = 0;
+      return count++;
+      //  block of code to be executed if the condition is false
     }
-  }
+       
+         
+        
+  };
 
   return counter
 }
