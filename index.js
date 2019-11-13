@@ -211,9 +211,10 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  let result = runners.map((first_name) =>{
-     return first_name.toUpperCase(); 
-    })
+  let uppers = runners.map(function(x) {
+     return x.first_name.toUpperCase(); 
+    });
+    return uppers;
 }
 
 /**
@@ -230,7 +231,11 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  /* CODE HERE */
+  let tshirtfilt = runners.filter(function(x) {
+    return x.shirt_size === tShirtSize;
+  });
+
+  return tshirtfilt;
 }
 
 /**
@@ -243,8 +248,12 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  const sum = runners.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue.donation;
+  }, 0);
+
+  return sum;
 }
 
 /////////////// CLOSURES ///////////////
@@ -265,12 +274,13 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
+  let count = 0;
   function counter() {
-    ++count
+    
+    return ++count
   }
   // BROKEN CODE ENDS
-}
+} 
 
 /**
  * ### Challenge `counterMakerWithLimit`
