@@ -91,7 +91,7 @@ function processLastItem(stringList, callback) {
  */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  // return callback(numberList.reduce((total, amount) => total + amount, 0));
+  return callback(numberList.reduce((amount, total) => amount + total, 0));
 }
 
 /**
