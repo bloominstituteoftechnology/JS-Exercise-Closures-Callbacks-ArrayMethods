@@ -38,7 +38,7 @@ function processFirstItem(stringList, callback) {
  * Implement a higher-order function called `processLength`.
  * It takes two arguments:
  * @param list an array with elements of any type.
- * @param callback function that takes a number as its argument.
+ * @param list  function that takes a number as its argument.
  * @returns the result of invoking `callback` passing the LENGTH of `list`.
  * 
  * Examples of usage of this higher-order function:
@@ -48,8 +48,13 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback ) {
+  const arr = [];
+  function getNum(num) {
+    const howLong = list.length[];
+    arr.push(howLong);
+  }
+  return arr;
 }
 
 /**
@@ -66,8 +71,8 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringList, callback ) {
+  
 }
 
 /**
