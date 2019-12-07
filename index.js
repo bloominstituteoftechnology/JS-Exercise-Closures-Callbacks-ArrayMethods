@@ -49,8 +49,9 @@ function processFirstItem(stringList, callback) {
  * should return "There are 0".
 */
 function processLength(list, callback) {
-  return callback(List.length[1002])
-}
+ return callback(list.length)
+  }
+
 
 /**
  * ### Challenge `processLastItem`
@@ -87,9 +88,11 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function processSum(numberList, callbacks) {
+  
+    return callbacks(numberList.reduce((acc, cur) => acc + cur, 0));
+  }
+
 
 /**
  * ### Challenge `processProduct`
@@ -178,10 +181,12 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
-}
-
+function getFullNames(runners) {
+ let runArr = []; 
+ runners.forEach((runners) => runArr.push(`${runners.last_name}, ${runners.first_name}`))
+  return runArr;
+ }
+ 
 /**
  * ### Challenge `firstNamesAllCaps`
  * 
