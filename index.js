@@ -139,8 +139,15 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
  */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
   /* CODE HERE */
+  let contains = list.filter(x => x === item);
+
+  return callback(contains[0]=== item);
+
+  // console.log("nice");
+  // console.log('sad');
+  // returns callback();
 }
 
 /**
@@ -253,6 +260,9 @@ function tallyUpDonations(/* CODE HERE */) {
  */
 function counterMaker() {
   // BROKEN CODE STARTS
+  let count = 0;
+    return count +
+  
   // const counter = counterMaker();
   // return counter();
   // return counter();
@@ -280,9 +290,19 @@ function counterMaker() {
  * counter() // should return 0
  * etc
  */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(limit) {
   /* CODE HERE */
-}
+//   let count = -1;
+
+//   return function() {
+//     if (limit === count) {
+//       count = 0;
+//     } else {
+//       count++;
+//     }
+//     return count;
+//   };
+// }
 
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
