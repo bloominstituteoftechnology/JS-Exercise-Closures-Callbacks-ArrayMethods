@@ -105,10 +105,17 @@ processLastItem([], str1 => {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
  */
-function processSum(/* CODE HERE */) {
+function processSum(/* CODE HERE */ numberList, callback) {
   /* CODE HERE */
+  var sum = 0;
+  for (let i = 0; i < numberList.length; i++) {
+    sum += numberList[i];
+  }
+  return callback(sum);
 }
-
+processSum([], num => {
+  return num + "is a big number";
+});
 /**
  * ### Challenge `processProduct`
  *
