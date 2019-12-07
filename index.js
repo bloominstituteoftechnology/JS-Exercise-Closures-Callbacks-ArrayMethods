@@ -49,8 +49,8 @@ function processFirstItem(stringList, callback) {
  */
 function processLength(list, callback) {
   /* CODE HERE */
-  // return callback(list.length);
-  return callback(list.length);
+  let num = list.length;
+  return callback(num);
 }
 
 /**
@@ -67,8 +67,9 @@ function processLength(list, callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
  */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringList, callback) {
   /* CODE HERE */
+  return callback(stringList[stringList.length - 1]);
 }
 
 /**
@@ -90,7 +91,7 @@ function processLastItem(/* CODE HERE */) {
  */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  return callback(numberList.reduce((total, amount) => total + amount, 0));
+  // return callback(numberList.reduce((total, amount) => total + amount, 0));
 }
 
 /**
@@ -249,10 +250,9 @@ function tallyUpDonations(/* CODE HERE */) {
  */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const counter = counterMaker();
-  return counter();
-  return counter();
-
+  // const counter = counterMaker();
+  // return counter();
+  // return counter();
   // ++count;
   // BROKEN CODE ENDS
 }
