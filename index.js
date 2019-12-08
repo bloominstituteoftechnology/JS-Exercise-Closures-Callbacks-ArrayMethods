@@ -164,9 +164,20 @@ processProduct([], [], num => {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
  */
-function processContains(/* CODE HERE */) {
+function processContains(/* CODE HERE */ item, list, callback) {
   /* CODE HERE */
-}
+  if ((Boolean) =>Boolean ? true:false){
+    return callback(true);
+  }
+   else {
+    return callback(false);
+//   }
+//   return callback(Boolean);
+// }
+processContains([], [], bool => {
+  bool ? "nice!" : "sad";
+  return bool;
+});
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -209,9 +220,21 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
-}
+
+
+
+
+
+
+  function getFullNames(/* CODE HERE */runners) {
+    /* CODE HERE */
+    let full_name=[];
+     runners.forEach((runners)=>full_name.push(`${runners.last_name}, ${runners.first_name}`))
+     return (full_name);
+  }
+  
+  
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
