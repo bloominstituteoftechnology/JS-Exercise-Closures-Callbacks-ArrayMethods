@@ -49,8 +49,9 @@ function processFirstItem(stringList, callback) {
  */
 function processLength(list, callback) {
   /* CODE HERE */
-  let num = list.length;
-  return callback(num);
+  // let num = list.length;
+  // return callback(num);
+  return callback(list.length); // provided by Kevin Schoell
 }
 
 /**
@@ -88,11 +89,17 @@ function processLastItem(stringList, callback) {
  *
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
- */
+//  */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  return callback(numberList.reduce((amount, total) => amount + total, 0));
+  return callback(numberList.reduce((amount, total) => amount + total, 0)); //amount and total can be labeled whatever you want
 }
+
+// function processSum(numberList, callback){  // code provided by Nicholas Gebhart
+//   return callback(numberList.reduce(function(amount, total) {
+//   return amount + total
+// },0))
+// }
 
 /**
  * ### Challenge `processProduct`
@@ -140,14 +147,10 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
  */
 function processContains(item, list, callback) {
-  /* CODE HERE */
-  let contains = list.filter(x => x === item);
-
-  return callback(contains[0]=== item);
-
-  // console.log("nice");
-  // console.log('sad');
-  // returns callback();
+  /* CODE HERE  array.prototype.includes() mdn web docs*/
+  // let result = list.includes(item);  // this will work but not the intent of the project
+  // return result
+  return callback(list.includes(item));
 }
 
 /**
@@ -191,8 +194,13 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  let runArray = [];
+  runners.forEach(runners =>
+    runArray.push(`${runners.last_name}, ${runners.first_name}`)
+  );
+  return runArray;
 }
 
 /**
@@ -207,7 +215,7 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
  */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
 }
 
@@ -261,12 +269,9 @@ function tallyUpDonations(/* CODE HERE */) {
 function counterMaker() {
   // BROKEN CODE STARTS
   let count = 0;
-    return count +
-  
-  // const counter = counterMaker();
-  // return counter();
-  // return counter();
-  // ++count;
+  return function counter() {
+    return count++;
+  };
   // BROKEN CODE ENDS
 }
 
@@ -292,16 +297,15 @@ function counterMaker() {
  */
 function counterMakerWithLimit(limit) {
   /* CODE HERE */
-//   let count = -1;
-
-//   return function() {
-//     if (limit === count) {
-//       count = 0;
-//     } else {
-//       count++;
-//     }
-//     return count;
-//   };
+//     let count = -1;
+//     return function() {
+//       if (limit === count) {
+//         count = 0;
+//       } else {
+//         count++;
+//       }
+//       return count;
+//     };
 // }
 
 /////////////// END OF CHALLENGE ///////////////
