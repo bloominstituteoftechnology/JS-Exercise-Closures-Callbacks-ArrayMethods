@@ -51,7 +51,7 @@ function processLength(list, callback) {
   /* CODE HERE */
   // let num = list.length;
   // return callback(num);
-  return callback(list.length); // provided by Kevin Schoell
+  return callback(list.length); // worked on with Kevin Schoell
 }
 
 /**
@@ -95,7 +95,7 @@ function processSum(numberList, callback) {
   return callback(numberList.reduce((amount, total) => amount + total, 0)); //amount and total can be labeled whatever you want
 }
 
-// function processSum(numberList, callback){  // code provided by Nicholas Gebhart
+// function processSum(numberList, callback){  // another way to do it; code provided by Nicholas Gebhart
 //   return callback(numberList.reduce(function(amount, total) {
 //   return amount + total
 // },0))
@@ -148,9 +148,11 @@ function processProduct(num1, num2, callback) {
  */
 function processContains(item, list, callback) {
   /* CODE HERE  array.prototype.includes() mdn web docs*/
-  // let result = list.includes(item);  // this will work but not the intent of the project
-  // return result
+
   return callback(list.includes(item));
+
+  // let result = list.includes(item);  // this will work but not the intent of the project via AH & Marcel R.
+  // return result
 }
 
 /**
@@ -174,17 +176,14 @@ function processContains(item, list, callback) {
  */
 function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
-  // let lookup = {};
-  // let result = [];
-  // for(let i = 0; i , list.length; i++){
-  //   if(!lookup[list]
-  // }
 
-  const noDups = Array.from(new Set(list.map(a => a.id))).map(id => {
-    return list.find(a => a.id === id);
-  });
-  return callback(noDups);
+  let newArr = [...new Set(list)]; // found at wsvincent.com/javascript-remove-duplicates-array
+  return callback(newArr);
 
+  // const noDups = Array.from(new Set(list.map(a => a.id))).map(id => {
+  //   return list.find(a => a.id === id);
+  // });
+  // return callback(noDups);
   // let lookup = [];
   // return list.filter(obj => !lookup[obj[key]] && lookup[[obj]key] == true);
   // let newArray = new Set(list);
@@ -290,7 +289,7 @@ function getRunnersByTShirtSize(runners, tShirtSize) {
  */
 function tallyUpDonations(runners) {
   /* CODE HERE */
-  // Referenced cheat sheet
+  // Referenced Pace's JS cheat sheet
   let reduceDonation = (accumulator, currentValue) =>
     accumulator + currentValue.donation;
   return runners.reduce(reduceDonation, 0);
