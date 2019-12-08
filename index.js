@@ -163,7 +163,7 @@ function processContains(item, list, callback) {
  * It takes two arguments:
  * @param list array of elements of any kind.
  * @param callback function that takes an array as its argument.
- * @returns the result of invoking `callback` passing a de-duped version of `list`.
+ * @returns the result of invoking `callback` passing a de-duped version of `list`.invok
  *
  * Examples of usage of this higher-order function:
  * [1] Invoking `processDuplicateFree` passing `[1,1,1,2]` and `(arr) => arr`,
@@ -172,8 +172,23 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
  */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  // let lookup = {};
+  // let result = [];
+  // for(let i = 0; i , list.length; i++){
+  //   if(!lookup[list]
+  // }
+
+  const noDups = Array.from(new Set(list.map(a => a.id))).map(id => {
+    return list.find(a => a.id === id);
+  });
+  return callback(noDups);
+
+  // let lookup = [];
+  // return list.filter(obj => !lookup[obj[key]] && lookup[[obj]key] == true);
+  // let newArray = new Set(list);
+  // return callback(newArray);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
