@@ -196,11 +196,25 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  */
 function getFullNames(runners) {
   /* CODE HERE */
-  let runArray = [];
-  runners.forEach(runners =>
-    runArray.push(`${runners.last_name}, ${runners.first_name}`)
+
+  const lastNameFirst = [];
+  runners.forEach(list =>
+    lastNameFirst.push(`${list.last_name}, ${list.first_name}`)
   );
-  return runArray;
+  return lastNameFirst;
+
+  // const lastNameFirst = [];
+  // for (let i = 0; i < runners.length; i++) {
+  //   let mappedObj = {};
+  //   mappedObj.last_name = runners[i].last_name;
+  //   mappedObj.first_name = runners[i].first_name;
+  //   lastNameFirst.push(mappedObj);
+  //   mappedObj = {};
+  // }
+
+  // const lastNameFirst = runners.map(name => {
+  //   return { last_name: name.last_name, first_name: name.first_name };
+  // });
 }
 
 /**
@@ -217,6 +231,17 @@ function getFullNames(runners) {
  */
 function firstNamesAllCaps(runners) {
   /* CODE HERE */
+
+  const firstNames = [];
+
+  runners.map(fn => {
+    firstNames.push(fn.first_name.toUpperCase());
+  });
+  return firstNames;
+
+  //ATTEMPTED TO WORK THE FORMULA LIKE IN THE CITY/STATE EXAMPLE ON THE VIDEO.  WITH HELP, CAME UP WITH THIS:
+  //   const mappedFirstNames = runners.map(fn => fn.first_name);
+  //   return mappedFirstNames.map(uc => uc.toUpperCase());
 }
 
 /**
@@ -297,16 +322,16 @@ function counterMaker() {
  */
 function counterMakerWithLimit(limit) {
   /* CODE HERE */
-//     let count = -1;
-//     return function() {
-//       if (limit === count) {
-//         count = 0;
-//       } else {
-//         count++;
-//       }
-//       return count;
-//     };
-// }
+  let count = -1;
+  return function() {
+    if (limit === count) {
+      count = 0;
+    } else {
+      count++;
+    }
+    return count;
+  };
+}
 
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
