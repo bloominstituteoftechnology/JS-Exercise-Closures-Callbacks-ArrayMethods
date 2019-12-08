@@ -134,9 +134,15 @@ processSum([], num => {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
  */
-function processProduct(/* CODE HERE */) {
+function processProduct(/* CODE HERE */ num1, num2, callback) {
   /* CODE HERE */
+  if ((num1 || num2) > 0) return callback(num1 * num2);
+  else return callback(1000);
 }
+
+processProduct([], [], num => {
+  return num + "is a big number";
+});
 
 /**
  * ### Challenge `processContains`
