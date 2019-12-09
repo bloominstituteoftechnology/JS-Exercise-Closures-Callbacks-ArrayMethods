@@ -141,8 +141,13 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  /* CODE HERE */
+  if(list.includes(item)){
+    return callback(true)
+ }
+ return callback(false)
 }
+
+
 
 /**
  * ### Challenge `processDuplicateFree`
