@@ -67,8 +67,10 @@ function processLength(list, callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringList, callback) {
+ 
+  return callback(stringList[stringList.length -1])
+  
 }
 
 /**
@@ -112,9 +114,11 @@ function processSum(numberList, callbacks) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function processProduct(num1, num2, callback) {
+  let add = num1 * num2
+ return callback(add);
+ }
+
 
 /**
  * ### Challenge `processContains`
@@ -136,7 +140,7 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
   /* CODE HERE */
 }
 
@@ -250,14 +254,10 @@ function tallyUpDonations(/* CODE HERE */) {
  * counter() // should return 2
  * etc
 */
-function counterMaker() {
-  // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
-  }
-  // BROKEN CODE ENDS
+function counterMaker(value) {
+  
 }
+
 
 /**
  * ### Challenge `counterMakerWithLimit`
