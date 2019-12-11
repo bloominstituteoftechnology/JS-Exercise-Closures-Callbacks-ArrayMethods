@@ -166,19 +166,9 @@ processProduct([], [], num => {
  * should return "sad".
  */
 function processContains(/* CODE HERE */ item, list, callback) {
-  /* CODE HERE */
-  // //if (Boolean => (Boolean ? true : false)) {
-  //   return callback(true);
-  // } else {
-  //   return callback(false);
-  //   //   }
-  //   //   return callback(Boolean);
-  //   // }
-  //   processContains([], [], bool => {
-  //     bool ? "nice!" : "sad";
-  //     return bool;
-  //   });
-}
+  function processContains(item, list, callbackb) {
+    return cb(list.includes(item));
+  }
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -198,8 +188,11 @@ function processContains(/* CODE HERE */ item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
  */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */list, cb) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  const [...set] = new Set(list);
+  return cb(set);
+}
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -224,8 +217,8 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
 function getFullNames(/* CODE HERE */ runners) {
   /* CODE HERE */
   let full_name = [];
-  runners.forEach(runners =>
-    full_name.push(`${runners.last_name}, ${runners.first_name}`)
+  runners.forEach(runner =>
+    full_name.push(`${runner.last_name}, ${runner.first_name}`)
   );
   return full_name;
 }
