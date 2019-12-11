@@ -1,3 +1,4 @@
+// @ts-nocheck
 // ⭐️ Example Challenge START ⭐️
 
 /**
@@ -166,19 +167,18 @@ processProduct([], [], num => {
  */
 function processContains(/* CODE HERE */ item, list, callback) {
   /* CODE HERE */
-  if ((Boolean) =>Boolean ? true:false){
-    return callback(true);
-  }
-   else {
-    return callback(false);
-//   }
-//   return callback(Boolean);
-// }
-processContains([], [], bool => {
-  bool ? "nice!" : "sad";
-  return bool;
-});
-
+  // //if (Boolean => (Boolean ? true : false)) {
+  //   return callback(true);
+  // } else {
+  //   return callback(false);
+  //   //   }
+  //   //   return callback(Boolean);
+  //   // }
+  //   processContains([], [], bool => {
+  //     bool ? "nice!" : "sad";
+  //     return bool;
+  //   });
+}
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -221,20 +221,14 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * The full names appear in the array in the same order the runners appear in the `runners` array.
  */
 
-
-
-
-
-
-  function getFullNames(/* CODE HERE */runners) {
-    /* CODE HERE */
-    let full_name=[];
-     runners.forEach((runners)=>full_name.push(`${runners.last_name}, ${runners.first_name}`))
-     return (full_name);
-  }
-  
-  
-
+function getFullNames(/* CODE HERE */ runners) {
+  /* CODE HERE */
+  let full_name = [];
+  runners.forEach(runners =>
+    full_name.push(`${runners.last_name}, ${runners.first_name}`)
+  );
+  return full_name;
+}
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -248,10 +242,15 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
  */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(/* CODE HERE */runers) {
   /* CODE HERE */
-}
+  let full_nam = [];
 
+  runers.forEach(runers =>
+    full_nam.push(`${runers.last_name}, ${runers.first_name.toUpperCase()}`)
+  );
+  return full_nam;
+}
 /**
  * ### Challenge `getRunnersByTShirtSize`
  *
@@ -265,8 +264,9 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
  */
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(/* CODE HERE */runners, tShirtSize) {
   /* CODE HERE */
+  return runners.filter(runner=>runner.shirt_size===size);
 }
 
 /**
@@ -279,8 +279,9 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
  */
-function tallyUpDonations(/* CODE HERE */) {
+function tallyUpDonations(/* CODE HERE */runners) {
   /* CODE HERE */
+  return runners.reduce((acc, cv) => (acc += cv.donation), 0);
 }
 
 /////////////// CLOSURES ///////////////
@@ -300,31 +301,34 @@ function tallyUpDonations(/* CODE HERE */) {
  * etc
  */
 
-var add = (function() {
-  var counter = 0;
-  return function() {
-    counter += 1;
-    return counter;
-  };
-})();
+// var add = (function() {
+//   var counter = 0;
+//   return function() {
+//     counter += 1;
+//     return counter;
+//   };
+// })();
 
 function counterMaker() {
-  // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    var count = 0;
-    function add() {
-      ++count;
-    }
-    add();
-    return count;
-  }
-  // BROKEN CODE ENDS
-}
+//   // BROKEN CODE STARTS
+   let count = 0;
+   return function() {
+    return count++;
+  };
+//   function counter() {
+//     var count = 0;
+//     function add() {
+//       ++count;
+//     }
+//     add();
+//     return count;
+//   }
+//   // BROKEN CODE ENDS
+ }
 
-counterMaker();
-counterMaker();
-counterMaker();
+// counterMaker();
+// counterMaker();
+// counterMaker();
 
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -346,8 +350,17 @@ counterMaker();
  * counter() // should return 0
  * etc
  */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(/* CODE HERE */max) {
   /* CODE HERE */
+  let count = 0;
+  return function() {
+    if (count <= max) {
+      return count++;
+    } else {
+      count = 0;
+      return count++;
+    }
+  };
 }
 
 /////////////// END OF CHALLENGE ///////////////
