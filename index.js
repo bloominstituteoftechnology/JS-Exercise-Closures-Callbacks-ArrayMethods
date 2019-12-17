@@ -164,7 +164,7 @@ function processContains(item, list, callback/* CODE HERE */) {
  * should return 3.
 */
 function processDuplicateFree(list, callback/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  
+  return list.filter((item, index)=>list.indexOf(item)==index)
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
