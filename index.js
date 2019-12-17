@@ -48,9 +48,11 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback) {
+  const movieNames = ['Drive', 'Batman', 'The Social Network', 'E.T'];
+  return movieNames.length;
 }
+  console.log(processLength());
 
 /**
  * ### Challenge `processLastItem`
@@ -66,7 +68,7 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringlist, callback) {
   /* CODE HERE */
 }
 
@@ -87,8 +89,13 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(item, list, callback) {
+    const value = 
+    list.filter(thing => thing === thing);
+      if (value.length > 0) {
+        return callback(true);
+      } else return
+        callback(false);
 }
 
 /**
@@ -109,7 +116,7 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
 }
 
