@@ -292,19 +292,24 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(count) {
+function counterMakerWithLimit(maxValue) {
   let counts = -1;
-  let maxValue = 3;
- 
-   return function count() {
-   counts++;
-   return counts;
+  return function counter (){
+    if (counts === maxValue){
+       counts = -1;
+    } 
+      return ++counts;
+    
+  }
   
-  }
+ 
+  //  return function counter() {
+  //  counts++;
+  //  return counts;
+  
+  // }
 
-  if (counts <= maxValue){
-    return count;
-  }
+
   
   
 }
