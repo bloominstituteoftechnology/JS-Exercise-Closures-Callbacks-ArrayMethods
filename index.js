@@ -87,11 +87,9 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum (numberList, callback) {
-  let sum = numberList.reduce(function (accumulator, currentValue) {
-    return callback(sum)
-  }, 0)
-  
+function processSum(/* CODE HERE */) {
+  /* CODE HERE */
+}
 
 /**
  * ### Challenge `processProduct`
@@ -213,8 +211,11 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  const shirts = runners.filter((items) => {
+    return items.shirt_size === tShirtSize;
+  })
+  return shirts
 }
 
 /**
@@ -227,8 +228,11 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {
+  let donationTotal = runners.reduce(function(prev, cur) {
+    return prev + cur.donation;
+  }, 0);
+  return donationTotal;
 }
 
 /////////////// CLOSURES ///////////////
@@ -249,10 +253,12 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
+  let count = 0-1;
   function counter() {
-    ++count
+    ++count;
+    return count
   }
+  return counter
   // BROKEN CODE ENDS
 }
 
@@ -276,8 +282,14 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+  var count = -1;
+  return function counter() {
+    if (count >= limit) {
+      count = -1;
+    }
+    return ++count;
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
