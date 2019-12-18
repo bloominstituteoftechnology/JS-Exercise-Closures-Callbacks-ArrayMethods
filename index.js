@@ -114,7 +114,8 @@ function processSum(numberList, callback) {
  * should return 1000.
 */
 function processProduct(num1, num2, callback) {
-  /* CODE HERE */
+  
+  return callback(num1 * num2)
 }
 
 /**
@@ -138,7 +139,7 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  /* CODE HERE */
+  return callback(list.includes(item))
 }
 
 /**
@@ -162,6 +163,7 @@ function processContains(item, list, callback) {
 */
 function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -183,7 +185,12 @@ function processDuplicateFree(list, callback) {
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
 function getFullNames(runners) {
-  /* CODE HERE */
+  let fullName = [];
+  runners.forEach(runner => {
+    const { first_name, last_name } = runner
+    fullName.push(`${last_name}, ${first_name}`)
+  })
+  return fullName
 }
 
 /**
@@ -199,7 +206,7 @@ function getFullNames(runners) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(runners) {
-  /* CODE HERE */
+  return runners.map(runner => runner.first_name.toUpperCase())
 }
 
 /**
@@ -216,7 +223,7 @@ function firstNamesAllCaps(runners) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
-  return runners.filter(runner => runners.shirt_size === tShirtSize) /* CODE HERE */
+  return runners.filter(runner => runner.shirt_size === tShirtSize) /* CODE HERE */
 }
 
 /**
@@ -253,7 +260,7 @@ function counterMaker() {
   // BROKEN CODE STARTS
   let count = -1;
   return function counter() {
-    return ++count;
+    return ++count
   }
   // BROKEN CODE ENDS
 }
