@@ -10,7 +10,7 @@ Use Google effectively! For example, let's say you want to learn more about the 
 ```
 ```
   array.prototype.reduce
-```
+```git 
 ```
   reduce site:mozilla.org
 ```
