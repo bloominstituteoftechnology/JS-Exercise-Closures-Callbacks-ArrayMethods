@@ -122,7 +122,9 @@ function processSum(numberList, callback) {
 */
 function processProduct(num1, num2, callback) {
   /* CODE HERE */
-  return callback(num1, num2);
+  var product = num1 * num2;
+
+  return callback(product);
 
 }
 
