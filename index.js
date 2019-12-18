@@ -50,9 +50,11 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
+function processLength(list, callback) {
   /* CODE HERE */
+  return callback(list.length);
 }
+
 
 /**
  * ### Challenge `processLastItem`
@@ -68,8 +70,9 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringlist, callback) {
   /* CODE HERE */
+  return callback(stringlist[stringlist.length -1]);
 }
 
 /**
@@ -91,11 +94,7 @@ function processLastItem(/* CODE HERE */) {
 */
 function processSum(numberList, callback) {
   /* CODE HERE */
-  const elementSum = numberList.reduce(function(bigBoiSum, curVal){
-    return bigBoiSum + curVal
-  });
-
-  return callback(elementSum);
+  return callback(numberList);
 }
 
 /**
@@ -116,8 +115,10 @@ function processSum(numberList, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
+  return callback(num1, num2);
+
 }
 
 /**
@@ -140,8 +141,9 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
   /* CODE HERE */
+  return callback(item, list);
 }
 
 /**
@@ -185,8 +187,9 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners, callback) {
   /* CODE HERE */
+  return callback(runners); 
 }
 
 /**
@@ -201,8 +204,9 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners, callback) {
   /* CODE HERE */
+  return callback(runners);
 }
 
 /**
@@ -218,8 +222,9 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(runners, tShirtSize, callback) {
   /* CODE HERE */
+  return callback(runners, tShirtSize); 
 }
 
 /**
