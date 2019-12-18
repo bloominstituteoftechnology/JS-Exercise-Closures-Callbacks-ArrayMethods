@@ -14,8 +14,7 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
-function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+function processFirstItem() {
 }
 
 // ⭐️ Example Challenge END ⭐️
@@ -48,8 +47,13 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+
+function processLength(item, list, callback) {
+  return callback(list.includes(item));
+  /*const foo = 'item';
+  const bar = 'list';
+  const num = (callback) => + 1000;
+  return callback(list.includesLength{0})*/ 
 }
 
 /**
@@ -66,8 +70,8 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringlist, callback) {
+  return callback([stringlist.length-1]);
 }
 
 /**
@@ -87,8 +91,8 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+  return callback(numberList.reduce((accumulator, currentValue) => accumulator + currentValue))
 }
 
 /**
