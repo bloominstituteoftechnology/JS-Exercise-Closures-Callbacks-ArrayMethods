@@ -15,7 +15,7 @@
  * should return 'foofoo'.
 */
 function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
+  return callback(stringList[0]);
 }
 
 
@@ -150,7 +150,7 @@ function processProduct(num1, num2, callback) {
 */
 function processContains(item, list, callback) {
   /* CODE HERE */
-  return callback(item, list);
+  return (list.includes(item))
 }
 
 /**
@@ -172,8 +172,16 @@ function processContains(item, list, callback) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, callback){
+    var newlist = [];
+    list.forEach(element =>{
+      if(newlist.lastIndexOf(element)==-1) newlist.push(element);
+
+    });
+
+    return callback(newlist);
+
+    
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -194,9 +202,15 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(runners, callback) {
+function getFullNames(runners) {
   /* CODE HERE */
-  return callback(runners); 
+  var fullnames = [];
+  runners.forEach(item=>{
+    //fullnames.push(element.last_name+ "," +element.first_name);
+    fullnames.push(`${item.last_name}, ${item.firstnames}`)
+  });
+
+  return fullnames; 
 }
 
 /**
@@ -211,9 +225,14 @@ function getFullNames(runners, callback) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(runners, callback) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
-  return callback(runners);
+  var firstnames = [];
+
+  runners.forEach(element=>{
+    firstnames.push(element.first_name);
+  });
+  return firstnames;
 }
 
 /**
@@ -229,9 +248,12 @@ function firstNamesAllCaps(runners, callback) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(runners, tShirtSize, callback) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
-  return callback(runners, tShirtSize); 
+  var tArray = runners.filter(function(e){
+    return e.shirtSize === tShirtSize;
+  });
+  return tArray; 
 }
 
 /**
