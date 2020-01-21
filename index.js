@@ -138,11 +138,7 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  const bool = list.filter(thing => thing === item);
-  if (bool.length > 0) {
-      return callback(true);
-  } else return callback(false);
-}
+  
 
 /**
  * ### Challenge `processDuplicateFree`
