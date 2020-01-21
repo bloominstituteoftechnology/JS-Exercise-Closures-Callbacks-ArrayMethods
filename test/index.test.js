@@ -81,7 +81,7 @@ describe("processContains()", () => {
   });
 });
 
-describe("processDuplicateFree() [STRETCH TASK]", () => {
+xdescribe("processDuplicateFree() [STRETCH TASK]", () => {
   it("works as specified", () => {
     const arr = [1, 2, 3, 4, 4, 5, 6, 7, 7, 7]
     const arr2 = [1, 2, 3]
