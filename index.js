@@ -167,7 +167,7 @@ function processContains(selected, list, cb) {
  * should return 3.
 */
 function processDuplicateFree(list, cb) {
-  return [...new Set(list)];
+  return cb([...new Set(list)]);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
