@@ -138,13 +138,13 @@ function processProduct(num1, num2, cb) {
  * should return "sad".
 */
 function processContains(selected, list, cb) {
-  let bool = false
+  cb = false;
   list.forEach(item => {
     if(item === selected){
-      bool = true;
+      cb = true;
     }
   })
-  return bool;
+  return cb;
 }
 
 /**
@@ -166,8 +166,11 @@ function processContains(selected, list, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(list, cb) {
-  return cb([...new Set(list)]);
+function processDuplicateFree(list) {
+  return [...new Set(list)];
+  // '...' converts set to an array
+  // new makes a new Set constructed from list
+  // Set is an object that  that stores unique values, so it skips duplicates
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -241,10 +244,12 @@ function getRunnersByTShirtSize(runnerList, size) {
  * @returns a number which is the sum of the donations by all runners.
 */
 function tallyUpDonations(runners) {
-  var sum = 0;
-  runners.forEach(runner => {
-    sum += runner.donation;
-  })
+  var initialValue = 0;
+
+  let sum = runners.reduce(function (accumulator, currentValue) {
+    return accumulator + currentValue.donation;
+  }, initialValue)
+  
   return sum;
 }
 
