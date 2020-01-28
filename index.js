@@ -183,9 +183,15 @@ processContains('foo', ['foo', 'bar'], Cb);
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(List, callback) {
+  return callback(List.filter((item, index) => List.indexOf(item) === index));
 }
+
+const cB = (arr) => {
+  return arr;
+}
+
+processDuplicateFree([1, 1, 2, 2, 3, 3], cB);
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -205,8 +211,13 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  const data = [];
+  runners.forEach(function(item){
+    data.push(`${item.last_name}, ${item.first_name}`);
+    return data;
+  })
+  return data;
 }
 
 /**
@@ -221,8 +232,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  const newRunners = runners.map(function(name) {
+    return name.first_name.toUpperCase();
+  });
+  return newRunners;
 }
 
 /**
@@ -238,8 +252,11 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+    const sameSize = runners.filter(function(item){
+      return item.shirt_size === "S";
+    });
+    return sameSize;
 }
 
 /**
