@@ -166,8 +166,8 @@ function processContains(selected, list, cb) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(list, cb) {
+  return [...new Set(list)];
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -226,8 +226,8 @@ function firstNamesAllCaps(runnerList) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(runnerList, tSize) {
-  
+function getRunnersByTShirtSize(runnerList, size) {
+  return runnerList.filter(runnerList => runnerList.shirt_size === size);
 }
 
 /**
@@ -293,7 +293,7 @@ function counterMaker() {
 */
 function counterMakerWithLimit(loopAmount) {
   var count = 0;
-  
+
   for(var i = 0; i < loopAmount; i++){
 
     return function counter() {
