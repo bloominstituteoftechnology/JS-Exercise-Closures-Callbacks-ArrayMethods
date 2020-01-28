@@ -48,13 +48,13 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(list, cb) {
-  return cb(list.length)
+function processLength(list, callback1) {
+  return callback1(list.length)
 }
-const cb = (num) =>{
+const callback1 = (num) =>{
   return "There are " + num;
 }
-console.log(processLength(['test','work'], cb));
+console.log(processLength(['test','work'], callback1));
 /**
  * ### Challenge `processLastItem`
  * 
@@ -69,10 +69,13 @@ console.log(processLength(['test','work'], cb));
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(stringList, callback) {
-  return (stringList)
+function processLastItem(stringList, callback2) {
+  return callback2(stringList [stringList.length-1]);
 }
-
+let callback2 = (string) => {
+  return string+string;
+}
+console.log()
 /**
  * ### Challenge `processSum`
  * 
@@ -90,10 +93,13 @@ function processLastItem(stringList, callback) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback3) {
+  let get = numberList.length;
+  return get;
 }
-
+let callback3 = (num) => {
+  return num;
+}
 /**
  * ### Challenge `processProduct`
  * 
@@ -112,10 +118,21 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback4) {
+  return callback4(num1 && num2);
 }
-
+let callback4 = (num) => {
+  let product = num1 * num2;
+  if (num1 === 0){
+    return product + 1000;
+  }
+  else if(num2 === 0){
+    return product + 1000;
+  }
+  else {
+    return product + " is a big number!"
+  }
+}
 /**
  * ### Challenge `processContains`
  * 
