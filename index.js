@@ -91,10 +91,11 @@ processLastItem(['foo', 'bar'], (str) => str + str)
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback) {
+  return callback(numberList.reduce((a,b) => a + b, 0)); 
 }
 
+processSum([10,20,30], (num)=> num + " is a big number!"); 
 /**
  * ### Challenge `processProduct`
  * 
@@ -118,7 +119,7 @@ function processProduct(num1, num2, callback) {
   return callback(num1 * num2); 
   }
 
-  processProduct(2, 7, (num) => num + "is a big numer!")
+  processProduct(2, 7, (num) => num + "is a big number!")
 
 /**
  * ### Challenge `processContains`
@@ -140,9 +141,11 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+function processContains(item, list, callback) {
+  return callback(list.indexOf(item) > -1);
 }
+processContains('foo', ['foo','bar'], (bool) => bool ? 'nice!' : 'sad')
+
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -185,9 +188,15 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(array) {
+  let listOFNames = []; 
+  array.forEach((names)=>{
+    return listOFNames.push(`${names.last_name}, ${names.first_name}`)
+  })
+
+
 }
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -201,8 +210,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(array) {
+  const namesCap = array.map(function(names){
+    return names.first_name.toUpperCase(); 
+  }); 
+
 }
 
 /**
