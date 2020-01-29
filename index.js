@@ -17,7 +17,7 @@
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
-
+processFirstItem(['foo','bar'], (str) => str + str)
 // ⭐️ Example Challenge END ⭐️
 
 
@@ -48,9 +48,11 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback) {
+  return callback(list.length)
 }
+
+processLength(['foo','bar'], (num) => num + 1000); 
 
 /**
  * ### Challenge `processLastItem`
@@ -66,9 +68,11 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringList, callback) {
+  return callback(stringList[stringList.length - 1]);
 }
+processLastItem(['foo', 'bar'], (str) => str + str)
+
 
 /**
  * ### Challenge `processSum`
@@ -109,9 +113,12 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
-}
+  return callback(num1 * num2); 
+  }
+
+  processProduct(2, 7, (num) => num + "is a big numer!")
 
 /**
  * ### Challenge `processContains`
