@@ -48,10 +48,13 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback1) {
+  return callback1(list.length)
 }
-
+const callback1 = (num) =>{
+  return "There are " + num;
+}
+console.log(processLength(['test','work'], callback1));
 /**
  * ### Challenge `processLastItem`
  * 
@@ -66,10 +69,13 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+function processLastItem(stringList, callback2) {
+  return callback2(stringList [stringList.length-1]);
 }
-
+let callback2 = (string) => {
+  return string+string;
+}
+console.log()
 /**
  * ### Challenge `processSum`
  * 
@@ -87,10 +93,13 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
-  /* CODE HERE */
+function processSum(numberList, callback3) {
+  let get = numberList.length;
+  return get;
 }
-
+let callback3 = (num) => {
+  return num;
+}
 /**
  * ### Challenge `processProduct`
  * 
@@ -109,10 +118,18 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback4) {
+  return callback4(num1, num2);
 }
-
+let callback4 = (num1, num2) => {
+  let product = num1 * num2;
+  if (num1 === 0 || num2 === 0){
+    return product + 1000;
+  }
+  else {
+    return product + " is a big number!"
+  }
+}
 /**
  * ### Challenge `processContains`
  * 
@@ -133,9 +150,19 @@ function processProduct(/* CODE HERE */) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+let boolean = false;
+let item = "foo"
+let list = ['foo', 'bar']
+function processContains(item, list, callback5){
+  return callback5 (boolean)
 }
+let bool = (boolean) => {
+  if (list.includes(item)){
+    boolean = true
+  }
+  return boolean ? 'nice' : 'sad'
+}
+console.log(processContains(item, list, bool));
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -178,8 +205,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+let array = [];
+function getFullNames(names) {
+   names.forEach((element)=> array.push(`${element.first_name}, ${element.last_name}`))
+  return array;  
 }
 
 /**
