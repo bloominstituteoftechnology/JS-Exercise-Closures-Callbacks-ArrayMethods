@@ -119,14 +119,11 @@ let callback3 = (num) => {
  * should return 1000.
 */
 function processProduct(num1, num2, callback4) {
-  return callback4(num1 && num2);
+  return callback4(num1, num2);
 }
-let callback4 = (num) => {
+let callback4 = (num1, num2) => {
   let product = num1 * num2;
-  if (num1 === 0){
-    return product + 1000;
-  }
-  else if(num2 === 0){
+  if (num1 === 0 || num2 === 0){
     return product + 1000;
   }
   else {
@@ -153,9 +150,19 @@ let callback4 = (num) => {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
-  /* CODE HERE */
+let boolean = false;
+let item = "foo"
+let list = ['foo', 'bar']
+function processContains(item, list, callback5){
+  return callback5 (boolean)
 }
+let bool = (boolean) => {
+  if (list.includes(item)){
+    boolean = true
+  }
+  return boolean ? 'nice' : 'sad'
+}
+console.log(processContains(item, list, bool));
 
 /**
  * ### Challenge `processDuplicateFree`
@@ -198,8 +205,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+let array = [];
+function getFullNames(names) {
+   names.forEach((element)=> array.push(`${element.first_name}, ${element.last_name}`))
+  return array;  
 }
 
 /**
