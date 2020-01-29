@@ -48,8 +48,8 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
-  /* CODE HERE */
+function processLength(list, callback) {
+  return callback(list.length);
 }
 
 /**
@@ -67,7 +67,7 @@ function processLength(/* CODE HERE */) {
  * should return 'barbar'.
 */
 function processLastItem(/* CODE HERE */) {
-  /* CODE HERE */
+  let stringList =[];
 }
 
 /**
@@ -109,10 +109,9 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
-  /* CODE HERE */
+function processProduct(num1, num2, callback) {
+  return callback(num1, num2)
 }
-
 /**
  * ### Challenge `processContains`
  * 
@@ -246,11 +245,8 @@ function tallyUpDonations(/* CODE HERE */) {
  * etc
 */
 function counterMaker() {
-  // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
-  }
+let counter = ((count = 0) => () => count++)()
+  return counter;
   // BROKEN CODE ENDS
 }
 
@@ -274,8 +270,14 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(maxValue) {
+  let count = 0;
+    return function(){
+    if(count > maxValue){
+       count = 0;
+    } 
+      return count++;
+  };
 }
 
 /////////////// END OF CHALLENGE ///////////////
