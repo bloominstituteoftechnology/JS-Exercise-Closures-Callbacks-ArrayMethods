@@ -211,11 +211,13 @@ function getFullNames(array) {
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
 function firstNamesAllCaps(array) {
-  const namesCap = array.map(function(names){
+  const namesCap = array.map((names) => {
     return names.first_name.toUpperCase(); 
   }); 
 
 }
+
+
 
 /**
  * ### Challenge `getRunnersByTShirtSize`
@@ -231,7 +233,7 @@ function firstNamesAllCaps(array) {
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
 function getRunnersByTShirtSize(array, tShirtSize) {
-  const runnerSize = array.filter(function(item){
+  const runnerSize = array.filter((item) =>{
     return tShirtSize.indexOf(array.shirt_size) > -1; 
   })
 }
@@ -246,8 +248,10 @@ function getRunnersByTShirtSize(array, tShirtSize) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(array) {
+  const totalDonation= array.reduce(function(accumulator,item){
+    return accumulator + item.donation;
+  }, 0)
 }
 
 /////////////// CLOSURES ///////////////
@@ -268,12 +272,21 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0; 
+
+  return function(){
+
+    return ++count;
   }
   // BROKEN CODE ENDS
 }
+
+const counter = counterMaker();
+
+counter();
+counter(); 
+ 
+
 
 /**
  * ### Challenge `counterMakerWithLimit`
@@ -296,8 +309,30 @@ function counterMaker() {
  * etc
 */
 function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
-}
+  let counter = 0
+ 
+   return function (){
+      
+     if ( counter <= 3 ){
+       return counter++;
+     }
+ 
+     else(counter >= 3)
+       return counter = 0; 
+     }
+   }
+ 
+ const count = counterMakerWithLimit(); 
+ 
+ console.log(count()); 
+ console.log(count());
+ console.log(count());
+ console.log(count());
+ console.log(count());
+ console.log(count());
+ console.log(count());
+ console.log(count());
+ console.log(count());
 
 /////////////// END OF CHALLENGE ///////////////
 /////////////// END OF CHALLENGE ///////////////
