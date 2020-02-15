@@ -306,10 +306,15 @@ function counterMaker() {
  */
 function counterMakerWithLimit(num /* CODE HERE */) {
   /* CODE HERE */
-  let count = 0;
+  let count = -1;
 
   return function counter() {
-    return count++;
+    if (count >= num) {
+      count = 0;
+    } else {
+      count/';'/;
+    }
+    return count;
   };
 }
 
