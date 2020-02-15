@@ -309,12 +309,12 @@ function counterMakerWithLimit(num /* CODE HERE */) {
   let count = -1;
 
   return function counter() {
-    if (count >= num) {
-      count = 0;
+    if (count < num) {
+      return ++count;
     } else {
-      count/';'/;
+     return count = 0
     }
-    return count;
+    
   };
 }
 
