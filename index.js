@@ -97,7 +97,7 @@ function processSum(numberList, callback) {
   return callback(numberList.reduce(reducer, 0));
 }
 
-}
+
 
 /**
  * ### Challenge `processProduct`
@@ -119,9 +119,8 @@ function processSum(numberList, callback) {
 */
 function processProduct(num1, num2, callback) {
     /* CODE HERE */
-    const reducer = (num1, num2) => num1 * num2;
-  return callback(reducer, 0);
-  
+    return callback(num1 * num2);
+} 
 
 /**
  * ### Challenge `processContains`
@@ -144,8 +143,13 @@ function processProduct(num1, num2, callback) {
  * should return "sad".
 */
 function processContains(item, list, callback) {
-  /* CODE HERE */
-
+  let onList = false;
+  for (let i = 0; i < list.length; i++) {    
+    if (item === list[i]) {
+      onList = true;
+    }    
+  }
+  return callback(onList);
 }
 
 /**
@@ -189,9 +193,13 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  const runnersNames = [];
+   runners.forEach(runner => runnersNames.push(`${runner.last_name}, ${runner.first_name}`));
+   return runnersNames;
 }
+
 
 /**
  * ### Challenge `firstNamesAllCaps`
@@ -205,8 +213,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(runners) {
   /* CODE HERE */
+  
+  return runners.map(runner => runner.first_name.toUpperCase());
+  
 }
 
 /**
@@ -222,8 +233,10 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
+  return runners.filter(runner => runner.shirt_size === tShirtSize); 
+  
 }
 
 /**
@@ -236,8 +249,9 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
+function tallyUpDonations(runners) {
   /* CODE HERE */
+  return runners.reduce((total, donation) => total += donation.donation, 0);
 }
 
 /////////////// CLOSURES ///////////////
@@ -258,9 +272,9 @@ function tallyUpDonations(/* CODE HERE */) {
 */
 function counterMaker() {
   // BROKEN CODE STARTS
-  const count = 0;
-  function counter() {
-    ++count
+  let count = 0;
+  return function counter() {
+   return count++;
   }
   // BROKEN CODE ENDS
 }
@@ -285,8 +299,18 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit(maxValue) {
   /* CODE HERE */
+  let count = 0;
+  return function() {
+    if (count < maxValue) {
+      return count++;
+    }
+    else if (count == maxValue){
+      count = 0;
+      return maxValue;
+    }    
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
