@@ -114,7 +114,7 @@ function processSum(numberList, callback) {
  * should return 1000.
 */
 function processProduct(num1, num2, callback) {
-  return callback(num1 *num2);
+  return callback(num1 * num2);
   /* CODE HERE */
 }
 
@@ -138,7 +138,8 @@ function processProduct(num1, num2, callback) {
  * "lady gaga" and `['foo', 'bar']` and `(bool) => bool ? 'nice!' : 'sad'`,
  * should return "sad".
 */
-function processContains(/* CODE HERE */) {
+function processContains(item, list, callback) {
+  return callback(list.includes(item));
   /* CODE HERE */
 }
 
@@ -183,8 +184,11 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(runners) {
   /* CODE HERE */
+  let name = []
+  runners.forEach((runner) => { name.push(runner.last_name + ', ' + runner.first_name); });
+  return name;
 }
 
 /**
