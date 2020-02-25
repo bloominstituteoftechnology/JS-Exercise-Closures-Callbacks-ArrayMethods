@@ -25,8 +25,8 @@ function processFirstItem(stringList, callback) {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 // 👇 COMPLETE YOUR WORK BELOW 👇
 
-/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
-/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ///////////////
+/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ////////
+/////////////// CALLBACKS AND HIGHER-ORDER FUNCTIONS ////
 
 var runners = [
   { id: 1, first_name: "Charmain", last_name: "Seiler", email: "cseiler0@wired.com", shirt_size: "2XL", company_name: "Divanoodle", donation: 75 },
