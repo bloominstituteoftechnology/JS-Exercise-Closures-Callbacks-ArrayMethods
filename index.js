@@ -365,8 +365,13 @@ function counterMaker() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit() {
   /* CODE HERE */
+  let counterz = 0;
+  for(let g =0; g > counterz; g++){
+    counterz++;
+  }
+return counterzz = counterz > 3 ? 0 : counterz;
 }
 
 /////////////// END OF CHALLENGE ///////////////
