@@ -291,22 +291,31 @@ function tallyUpDonations(/* CODE HERE */) {
  * ### Challenge `counterMaker`
  * 
  * @instructions
- * Fix this function so a counter produced with it will increment correctly!
- * Usage is as follows:
+ * Study the code for counter1 and counter2. Answer the questions below.
  * 
- * const counter = counterMaker()
- * counter() // should return 0
- * counter() // should return 1
- * counter() // should return 2
- * etc
+ * 1. What is the difference between counter1 and counter2?
+ * 
+ * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *
 */
+
+// counter1 code
 function counterMaker() {
-  // BROKEN CODE STARTS
-  const count = 0;
+  let count = 0;
   function counter() {
-    ++count
+    count++;
   }
-  // BROKEN CODE ENDS
+}
+
+const counter1 = counterMaker();
+
+// counter2 code
+let count = 0;
+
+function counter2() {
+  return count++;
 }
 
 /**
