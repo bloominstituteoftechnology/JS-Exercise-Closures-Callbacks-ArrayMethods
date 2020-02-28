@@ -226,7 +226,7 @@ function stringSmash(/* code here */) {
  * ### Challenge `getFullNames`
  * 
  * @instructions
- * Implement this function using forEach().
+ * Implement this function using forEach() or map().
  * 
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns an array with all the runners' full names in the following format: "Smith, John".

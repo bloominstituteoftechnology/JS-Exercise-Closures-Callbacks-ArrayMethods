@@ -60,9 +60,9 @@ describe("processLastItem()", () => {
 
 describe("processSum()", () => {
   it("works as specified", () => {
-    expect(processSum([1, 2, 3], n => n + 1000)).to.equal(1006);
-    expect(processSum([1], n => n + 1000)).to.equal(1001);
-    expect(processSum([], n => n + 1000)).to.equal(1000);
+    expect(processSum(1, 5, n => n + 1000)).to.equal(1006);
+    expect(processSum(1, 0, n => n + 1000)).to.equal(1001);
+    expect(processSum(-2, -5, n => n + 1000)).to.equal(993);
   });
 });
 
@@ -87,7 +87,7 @@ describe("processDuplicateFree() [STRETCH TASK]", () => {
 
 const fruits = [ 'Apple', 'ORANGE', 'banana', 'apple', 'MaNgO', 'apple' ];
 
-describe("lowerCaseStrings", () => {
+describe("lowerCaseStrings()", () => {
   it("lowercases all strings", () => {
     const lowerFruits = lowerCaseStrings(fruits);
     expect(lowerFruits.length).to.eql(fruits.length);
@@ -95,7 +95,16 @@ describe("lowerCaseStrings", () => {
   })
 });
 
-describe("removeApple", () => {
+describe("isItAnApple()", () => {
+  it("creates an array of booleans", () => {
+    const isIt = isItAnApple(fruits);
+
+    expect(isIt.length).to.eql(fruits.length);
+    expect(isIt).to.eql([ false, false, false, true, false, true]);
+  })
+});
+
+describe("removeApple()", () => {
   it("removes the string 'apple'", () => {
     const noApples = removeApple(fruits);
     expect(noApples.length).to.eql(4);
@@ -104,7 +113,7 @@ describe("removeApple", () => {
 });
 
 
-describe("stringSmash", () => {
+describe("stringSmash()", () => {
   it("combines all strings into one", () => {
     const smash = stringSmash(fruits);
     expect(typeof smash).to.eql('string');
