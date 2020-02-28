@@ -187,6 +187,7 @@ function isItAnApple(/* code here */) {
  * @param strings an array of strings.
  * @returns a similar array, with an entries that are 'apple' removed.
  * 
+ *This function is case sensitive and, for example, should not remove 'Apple' or 'APPLE'
  * 
  * Examples of usage of this function:
  * [1] Invoking `removeApple` with `[ 'orange', 'apple', 'banana', 'apples', 'apple', 'mango' ]` will return `[ 'orange', 'banana', 'apples', 'mango' ]`.
@@ -357,10 +358,12 @@ if (typeof exports !== 'undefined') {
   if (processSum) { module.exports.processSum = processSum }
   if (processProduct) { module.exports.processProduct = processProduct }
   if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
+  if (isItAnApple) { module.exports.isItAnApple = isItAnApple }
+  if (removeApple) { module.exports.removeApple = removeApple }
+  if (stringSmash) { module.exports.stringSmash = stringSmash }
   if (getFullNames) { module.exports.getFullNames = getFullNames }
   if (firstNamesAllCaps) { module.exports.firstNamesAllCaps = firstNamesAllCaps }
   if (getRunnersByTShirtSize) { module.exports.getRunnersByTShirtSize = getRunnersByTShirtSize }
   if (tallyUpDonations) { module.exports.tallyUpDonations = tallyUpDonations }
-  if (counterMaker) { module.exports.counterMaker = counterMaker }
   if (counterMakerWithLimit) { module.exports.counterMakerWithLimit = counterMakerWithLimit }
 }

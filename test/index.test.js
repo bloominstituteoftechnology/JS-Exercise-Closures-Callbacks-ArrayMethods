@@ -18,13 +18,15 @@ if (typeof exports !== "undefined") {
     processLastItem,
     processSum,
     processProduct,
-    processContains,
     processDuplicateFree,
+    lowerCaseStrings,
+    isItAnApple,
+    removeApple,
+    stringSmash,
     getFullNames,
     firstNamesAllCaps,
     getRunnersByTShirtSize,
     tallyUpDonations,
-    counterMaker,
     counterMakerWithLimit,
   } = require("../index.js");
 }
@@ -71,16 +73,6 @@ describe("processProduct()", () => {
   });
 });
 
-describe("processContains()", () => {
-  it("works as specified", () => {
-    const o = {}
-    expect(processContains(o, [1, o, 3], b => b)).to.equal(true);
-    expect(processContains({}, [{}], b => b)).to.equal(false);
-    expect(processContains(2, [1, 2], b => b)).to.equal(true);
-    expect(processContains(1, [2, 3], b => b)).to.equal(false);
-  });
-});
-
 describe("processDuplicateFree() [STRETCH TASK]", () => {
   it("works as specified", () => {
     const arr = [1, 2, 3, 4, 4, 5, 6, 7, 7, 7]
@@ -92,6 +84,34 @@ describe("processDuplicateFree() [STRETCH TASK]", () => {
     expect(processDuplicateFree([], cb)).to.eql([]);
   });
 });
+
+const fruits = [ 'Apple', 'ORANGE', 'banana', 'apple', 'MaNgO', 'apple' ];
+
+describe("lowerCaseStrings", () => {
+  it("lowercases all strings", () => {
+    const lowerFruits = lowerCaseStrings(fruits);
+    expect(lowerFruits.length).to.eql(fruits.length);
+    expect(lowerFruits).to.eql(['apple', 'orange', 'banana', 'apple', 'mango', 'apple']);
+  })
+});
+
+describe("removeApple", () => {
+  it("removes the string 'apple'", () => {
+    const noApples = removeApple(fruits);
+    expect(noApples.length).to.eql(4);
+    expect(noApples).to.eql([ 'Apple', 'ORANGE', 'banana',  'MaNgO']);
+  })
+});
+
+
+describe("stringSmash", () => {
+  it("combines all strings into one", () => {
+    const smash = stringSmash(fruits);
+    expect(typeof smash).to.eql('string');
+    expect(smash).to.eql('AppleORANGEbananaappleMaNgOapple');
+  })
+});
+
 
 describe("getFullNames()", () => {
   it("returns an array of strings", () => {
@@ -129,7 +149,7 @@ describe("getRunnersByTShirtSize()", () => {
   });
 });
 
-describe("tallyUpDonations()", () => {
+describe("tallyUpDonations() [STRETCH TASK]", () => {
   it("returns 0 for an empty runners array", () => {
     expect(tallyUpDonations([])).to.equal(0);
   });
@@ -145,23 +165,7 @@ describe("tallyUpDonations()", () => {
   });
 });
 
-describe("counterMaker()", () => {
-  const counter = counterMaker()
-  it("returns a function", () => {
-    expect(isFunction(counter)).to.equal(true);
-  });
-  it("the counter produced with counterMaker returns 0 on first invocation", () => {
-    expect(counter()).to.equal(0);
-  });
-  it("the counter produced with counterMaker returns 1 on second invocation", () => {
-    expect(counter()).to.equal(1);
-  });
-  it("the counter produced with counterMaker returns 2 on third invocation", () => {
-    expect(counter()).to.equal(2);
-  });
-});
-
-describe("counterMakerWithLimit()", () => {
+describe("counterMakerWithLimit() [STRETCH TASK]", () => {
   const counter = counterMakerWithLimit(3)
   it("returns a function", () => {
     expect(isFunction(counter)).to.equal(true);
