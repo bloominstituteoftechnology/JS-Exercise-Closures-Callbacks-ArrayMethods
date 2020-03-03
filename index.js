@@ -305,7 +305,7 @@ function tallyUpDonations(/* CODE HERE */) {
 // counter1 code
 function counterMaker() {
   let count = 0;
-  function counter() {
+  return function counter() {
     count++;
   }
 }
@@ -358,6 +358,7 @@ if (typeof exports !== 'undefined') {
   if (processSum) { module.exports.processSum = processSum }
   if (processProduct) { module.exports.processProduct = processProduct }
   if (processDuplicateFree) { module.exports.processDuplicateFree = processDuplicateFree }
+  if (lowerCaseStrings ) { module.exports.lowerCaseStrings = lowerCaseStrings}
   if (isItAnApple) { module.exports.isItAnApple = isItAnApple }
   if (removeApple) { module.exports.removeApple = removeApple }
   if (stringSmash) { module.exports.stringSmash = stringSmash }
