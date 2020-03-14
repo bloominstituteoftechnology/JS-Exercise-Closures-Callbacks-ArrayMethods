@@ -234,9 +234,12 @@ function removeApple(strings) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(strings) {
-  
-}
+  const smash = strings.reduce((accum, curVal)=> {
+    return accum + curVal;
+  });
 
+  return smash;
+}
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
 // updates to their facilities. Each business has assigned a representative
@@ -273,9 +276,15 @@ function getFullNames(runners) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let allCaps = [];
+
+  runners.map((runner, index) => {
+    allCaps[index] = runner.first_name.toUpperCase();
+  })
+  return allCaps;
 }
+
 
 /**
  * ### Challenge `getRunnersByTShirtSize`
@@ -291,8 +300,13 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let size = runners.filter((person) => {
+    if (person.shirt_size === tShirtSize) {
+      return `${person.first_name} ${person.last_name}`;
+    }
+  });
+  return size;
 }
 
 /**
@@ -306,8 +320,10 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(runners) {  
+    return runners.reduce((accum, item) => {      
+      return accum + item.donation;
+    }, 0);  
 }
 
 /////////////// CLOSURES ///////////////
@@ -365,8 +381,18 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(limit) {
+  let count = 0;
+
+  return function() {
+    if (count < limit) {
+      return count++;
+    } else {
+      count = 0;
+      return limit;
+    }
+
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
