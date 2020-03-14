@@ -157,10 +157,10 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
 function lowerCaseStrings(arr) {
-  arr.map((string) => {
-    return string.toLowerCase();
-  });
-
+  const uppercaseArr = [];
+  arr.forEach(item => uppercaseArr.push(item.toLowerCase()));
+  return uppercaseArr;
+}
 /**
  * ### Challenge `isItAnApple`
  * 
@@ -176,8 +176,15 @@ function lowerCaseStrings(arr) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+ const realFruit = strings.map(fruit => {
+   if(fruit === 'apple'){
+     return true;
+   } else {
+     return false;
+   }
+ })
+ return realFruit;
 }
 
 /**
@@ -196,8 +203,9 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+ const appless = strings.filter(string => string !== 'apple');
+ return appless;
 }
 
 /**
@@ -215,9 +223,12 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
-}
+function stringSmash(strings) {
+  const newString = strings.reduce((accumulator, currentItem) => {
+    return accumulator + currentItem;
+});
+return newString;
+};
 
 // A local community center is holding a fund raising 5k fun run and has invited
 // 50 small businesses to make a small donation on their behalf for some much needed
@@ -234,8 +245,10 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  const names = [];
+  runners.forEach(runner => names.push(`${runners.last_name}, ${runners.first_name}`));
+  return names;
 }
 
 /**
@@ -250,8 +263,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  const capName = runners.map(runner => {
+    runner.first_name.toUpperCase();
+  });
+  return capName;
 }
 
 /**
@@ -370,3 +386,4 @@ if (typeof exports !== 'undefined') {
   if (tallyUpDonations) { module.exports.tallyUpDonations = tallyUpDonations }
   if (counterMakerWithLimit) { module.exports.counterMakerWithLimit = counterMakerWithLimit }
 }
+
