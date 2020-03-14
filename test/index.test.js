@@ -73,7 +73,7 @@ describe("processProduct()", () => {
   });
 });
 
-describe("processDuplicateFree() [STRETCH TASK]", () => {
+xdescribe("processDuplicateFree() [STRETCH TASK]", () => {
   it("works as specified", () => {
     const arr = [1, 2, 3, 4, 4, 5, 6, 7, 7, 7]
     const arr2 = [1, 2, 3]
@@ -135,7 +135,7 @@ describe("getFullNames()", () => {
   });
 });
 
-describe("firstNamesAllCaps()", () => {
+xdescribe("firstNamesAllCaps()", () => {
   it("returns an array of strings", () => {
     expect(firstNamesAllCaps(runners).every(r => typeof r === 'string')).to.equal(true);
   });
@@ -148,7 +148,7 @@ describe("firstNamesAllCaps()", () => {
   });
 });
 
-describe("getRunnersByTShirtSize()", () => {
+xdescribe("getRunnersByTShirtSize()", () => {
   it("returns an array of runners of a given shirt size", () => {
     expect(getRunnersByTShirtSize(runners, 'S').every(r => r.shirt_size === 'S')).to.equal(true);
   });
@@ -158,7 +158,7 @@ describe("getRunnersByTShirtSize()", () => {
   });
 });
 
-describe("tallyUpDonations() [STRETCH TASK]", () => {
+xdescribe("tallyUpDonations() [STRETCH TASK]", () => {
   it("returns 0 for an empty runners array", () => {
     expect(tallyUpDonations([])).to.equal(0);
   });
@@ -174,7 +174,7 @@ describe("tallyUpDonations() [STRETCH TASK]", () => {
   });
 });
 
-describe("counterMakerWithLimit() [STRETCH TASK]", () => {
+xdescribe("counterMakerWithLimit() [STRETCH TASK]", () => {
   const counter = counterMakerWithLimit(3)
   it("returns a function", () => {
     expect(isFunction(counter)).to.equal(true);
