@@ -1,3 +1,4 @@
 {
-  "standard.enable": false
+  "standard.enable": false,
+  "liveServer.settings.port": 5501
 }
