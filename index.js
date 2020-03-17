@@ -112,7 +112,7 @@ function processSum(num1, num2, callback) {
  * should return 1000.
 */
 function processProduct(num1, num2, callback) {
-  return callback(num1 * num2);
+  return callback(num1 *  num2);
 }
 
 /**
