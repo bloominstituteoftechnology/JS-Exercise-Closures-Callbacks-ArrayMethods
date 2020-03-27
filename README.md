@@ -8,14 +8,20 @@ The module challenge is the afternoon project or assignment that students work t
 
 ## Objectives
 
-- Scope - Learn to explain function scope
-- Closures - describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
+- Explain function scope
+- Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
 
 ## Introduction
 
 This challenge focuses on both scope and closures.
 
+In this challenge you will be working to build a `scoreboard` (in the console) that takes randomly generated data and keeps track of a game's progress. If you're not familiar with the rules of baseball what you need to know is this: there are 9 innings and teams take turns "at-bat." Teams can only score while they are at bat. A team stops being at bat once they have gotten 3 `outs` by either striking out or through game play. You can read more about baseball rules [here](https://www.rulesofsport.com/sports/baseball.html).
 
+A scoreboard in a major league stadium looks something like this. In fact, the scoreboard at Fenway Park in Boston is actually quite famous. 
+
+![Fenway Scoreboard](https://storage.googleapis.com/afs-prod/media/media:e959506330fd4e5890023c93cfbaac55/800.jpeg)
+
+There are layers upon layers of nested functions within the game of baseball. Your challenge today will be to work through tasks associated with these layers, and ultimately to produce a scoreboard that logs in the console.
 
 ## Instructions
 

@@ -23,11 +23,7 @@ function processFirstItem(stringList, callback) {
 
 ///// M V P ///////
 
-// 🪐 SCOPE 🪐 //
-
-
-
-// 🔒 CLOSURES 🔒 //
+/* Task 1: 
 
 /**
 Task 1: `counterMaker`
@@ -60,7 +56,26 @@ function counter2() {
 
 
 /**
-Task 2: `counterMakerWithLimit`
+Task 2: Your final task is to create a function called `counterMakerWithLimit` that accepts the following parameters: 
+
+(1) Callback function `get inning score`
+
+
+and returns 
+
+1st inning: awayTeam - homeTeam
+2nd inning: awayTeam - homeTeam
+3rd inning: awayTeam - homeTeam
+4th inning: awayTeam - homeTeam
+5th inning: awayTeam - homeTeam
+6th inning: awayTeam - homeTeam
+7th inning: awayTeam - homeTeam
+8th inning: awayTeam - homeTeam
+9th inning: awayTeam - homeTeam
+
+Final Score: awayTeam - homeTeam
+
+
   
  * Implement a counter maker that takes a max value for the count.
  * A counter created with it will reset itself after reaching the max value.
