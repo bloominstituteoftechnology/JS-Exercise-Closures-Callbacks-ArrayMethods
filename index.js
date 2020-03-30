@@ -56,9 +56,15 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
+function inning(/*Code Here*/){
+
+    /*Code Here*/
+
+}
+
 /* Task 3: finalScore()
 
-Write a higher order function called `finalScore` that accepts the callback function inning and a number of innings and and returns the final score of the game in the form of an object.
+Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
 
 For example, 
 
@@ -70,14 +76,21 @@ finalScore(inning, 9) might return:
 
 */ 
 
+function finalScore(/*Code Here*/){
+
+  /*Code Here*/
+
+}
+
 /* Task 4: 
 
-Create a function called `counterMakerWithLimit` that accepts the following parameters: 
+Create a function called `scoreboard` that accepts the following parameters: 
 
-(1) Callback function `get inning score`
+(1) Callback function `getInningScore`
+(2) Callback function `inning`
+(2) A number of innings
 
-
-and returns 
+and returns the score at each pont in the game, like so:
 
 1st inning: awayTeam - homeTeam
 2nd inning: awayTeam - homeTeam
@@ -89,26 +102,10 @@ and returns
 8th inning: awayTeam - homeTeam
 9th inning: awayTeam - homeTeam
 
-Final Score: awayTeam - homeTeam
+Final Score: awayTeam - homeTeam */
 
-
-  
- * Implement a counter maker that takes a max value for the count.
- * A counter created with it will reset itself after reaching the max value.
- * Usage is as follows:
- * 
- * const counter = counterMakerWithLimit(3)
- * counter() // should return 0
- * counter() // should return 1
- * counter() // should return 2
- * counter() // should return 3
- * counter() // should return 0
- * counter() // should return 1
- * counter() // should return 2
- * counter() // should return 3
- * counter() // should return 0
- * etc
-*/
-function counterMakerWithLimit(/* CODE HERE */) {
+function scoreboard(/* CODE HERE */) {
   /* CODE HERE */
 }
+
+
