@@ -76,7 +76,7 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*Code Here*/){
+function finalScore(/*code Here*/){
 
   /*Code Here*/
 
