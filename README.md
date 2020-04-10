@@ -64,9 +64,9 @@ dansRoll();
 dansRoll();
 ```
 
-   a. Where is closure used in this code? How can you tell?
-   b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-   c. What is the lexical scope of `newRoll`? 
+a. Where is closure used in this code? How can you tell?
+b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+c. What is the lexical scope of `newRoll`? 
 
 ### Task 3 - Stretch Goals
 
@@ -74,9 +74,7 @@ After you have completed the requirements, **create** a new file called `stretch
 
 See if you can complete one or more of the following challenges:
 
-- [ ] Challenge 1
-- [ ] Challenge 2
-- [ ] Challenge 3
+- [ ] 
 
 ## Testing FAQ
 
