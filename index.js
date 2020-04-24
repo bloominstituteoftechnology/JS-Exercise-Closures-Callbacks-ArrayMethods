@@ -247,8 +247,10 @@ function stringSmash(strings) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+  let fullNames = [];
+  runners.forEach(objEntries => fullNames.push(objEntries.last_name + ', ' + objEntries.first_name));
+  return fullNames;
 }
 
 /**
@@ -263,8 +265,11 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+  let cappedNames = [];
+
+  runners.forEach(objEntries => cappedNames.push(objEntries.first_name.toUpperCase('')));
+  return cappedNames;
 }
 
 /**
