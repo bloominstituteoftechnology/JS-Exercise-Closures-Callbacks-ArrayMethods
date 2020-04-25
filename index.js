@@ -182,9 +182,9 @@ return stringArr;
 */
 function isItAnApple(strings) {
   
-  const appStr = strings.map( 'apple'?  true : false)
+ return( strings.map(strings =>  strings === 'apple' ? true : false))
 
-  return appStr
+  
 }
 /**
  * ### Challenge `removeApple`
@@ -202,8 +202,10 @@ function isItAnApple(strings) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+
+  return (strings.filter(string => string !== 'apple')
+  )
 }
 
 /**
@@ -222,7 +224,7 @@ function removeApple(/* code here */) {
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
 function stringSmash(strings) {
-
+return (strings.reduce())
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
