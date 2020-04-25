@@ -286,8 +286,8 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
-  /* CODE HERE */
+function getRunnersByTShirtSize(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
 /**
@@ -301,8 +301,8 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
-  /* CODE HERE */
+function tallyUpDonations(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
 /////////////// CLOSURES ///////////////
@@ -315,10 +315,10 @@ function tallyUpDonations(/* CODE HERE */) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+ * counter1 is using a nested function to return count++ from within the function scope. Counter2 is directly returning count++, but reaching outside the function scope to find the declared value of count.
  * 2. Which of the two uses a closure? How can you tell?
- * 
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * counter2 is using a closure because function counter2() must reach outside of the function scope to read the value assigned to count in order to return count++.
+ * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? counter1 would be best suited for a situation where the value of count is not needed for any functions other than counter1 since it's nested within a function. counter2 is better suited for scenarios where the value of count may be needed for multiple functions, not just counter2. Declaring count in the global scope makes this possible.
  *
 */
 
@@ -360,8 +360,8 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
-  /* CODE HERE */
+function counterMakerWithLimit(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
 }
 
 /////////////// END OF CHALLENGE ///////////////
