@@ -67,8 +67,10 @@ function processLength(list, callback) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringList, callback) {
   /* CODE HERE */
+
+  return callback(stringList[stringList.length - 1]);
 }
 
 /**
@@ -89,8 +91,10 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `-5`, '-1', and `(num) => num + 1000`,
  * should return 994.
 */
-function processSum(/* CODE HERE */) {
+function processSum(num1, num2, callback) {
   /* CODE HERE */
+
+  return callback(num1 + num2);
 }
 
 /**
@@ -111,8 +115,10 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
+
+  return callback(num1 * num2);
 }
 
 /**
@@ -133,8 +139,37 @@ function processProduct(/* CODE HERE */) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function processDuplicateFree(arr, callback){
+  // var uniqueArr = []; //de duped array to be passed
+  // var unique = true; //boolean for logic
+
+  // for(var i = 0; i < arr.length; i++)
+  // {
+  //   for(var j = 0; j < uniqueArr.length; j++)
+  //   {
+  //     if(arr[i] === uniqueArr[j]) //take the value in arr[i] and compare it to every element in uniqueArr    //
+  //     {                           //if the same value is found, set bool unique to false
+  //       unique = false;
+  //     }
+  //     else
+  //     {
+  //       unique = true; //if no value found, set to true
+  //     }
+  //   }
+
+  //   if(unique) //if unique, push onto new array
+  //   {
+  //     uniqueArr.push(arr[i]);
+  //   }
+  // }
+
+  // return callback(uniqueArr);
+
+  let unique = [...new Set(arr)];
+
+  return callback(unique);
+
+
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
