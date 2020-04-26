@@ -1,5 +1,7 @@
 // ⭐️ Example Challenge START ⭐️
 
+// Questions for 1:1 review: processDuplicateFree (line 137) getRunnersByTShirtSize (line 291)
+
 /**
  * ### Challenge `processFirstItem`
  * 
@@ -135,6 +137,8 @@ function processProduct(num1, num2, callback) {
 function processDuplicateFree(list, callback) {
   return callback(list.filter((listItem, index) => list.indexOf(listItem) === index));
 }
+
+//having some trouble visualizing what's going on under the hood on this one.
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -286,9 +290,16 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function getRunnersByTShirtSize(runners, tShirtSize) {
+  let nameBySize = [];
+  runners.filter(objEntries => {
+    if (objEntries.shirt_size === tShirtSize)
+      nameBySize.push(objEntries.first_name + ' ' + objEntries.last_name);
+  });
+  return nameBySize;
 }
+
+//Questions: nameBySize does return an array with the names of runners that wear the specified tShirtSize, but I'm still getting an error. Not sure where else to go on this one.
 
 /**
  * ### Challenge `tallyUpDonations`
