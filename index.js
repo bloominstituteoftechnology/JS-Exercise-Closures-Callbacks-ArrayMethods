@@ -191,8 +191,15 @@ function processDuplicateFree(arr, callback){
  * 
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
+function lowerCaseStrings(stringArr) {
   /* code here */
+  var dummy = [];
+
+  stringArr.forEach((str) => {
+    dummy.push(str.toLowerCase());
+  });  
+
+  return dummy;
 }
 
 /**
@@ -210,8 +217,22 @@ function lowerCaseStrings(/* code here */) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
+function isItAnApple(arr) {
   /* code here */
+
+  var boolArr = arr.map((str) => 
+    {
+      if(str === "apple")
+      {
+        return true;
+      }
+      else
+      {
+        return false;
+      }
+    });
+
+  return boolArr;
 }
 
 /**
@@ -230,8 +251,10 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
+function removeApple(strArr) {
   /* code here */
+
+  return strArr.filter(item => item !== "apple");
 }
 
 /**
@@ -249,8 +272,10 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
+function stringSmash(arr) {
   /* code here */
+  
+  return arr.reduce((str, values)=>{return str + values;});
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -268,8 +293,21 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
+function getFullNames(arr) {
   /* CODE HERE */
+
+  //solution with map
+
+  return arr.map(name => name.last_name + ", " + name.first_name);
+
+  //solution with forEach
+  // var nArr = [];
+
+  // arr.forEach((name) => {
+  //     nArr[name.id-1] =  name.last_name + ", " + name.first_name;
+  //   });
+
+  // return nArr;
 }
 
 /**
@@ -284,8 +322,10 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
+function firstNamesAllCaps(arr) {
   /* CODE HERE */
+
+  return arr.map(name => name.first_name.toUpperCase());
 }
 
 /**
@@ -302,8 +342,10 @@ function firstNamesAllCaps(/* CODE HERE */) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(/* CODE HERE */) {
+function getRunnersByTShirtSize(arr, size) {
   /* CODE HERE */
+
+  return arr.filter(rSize => size === rSize.shirt_size);
 }
 
 /**
@@ -317,8 +359,10 @@ function getRunnersByTShirtSize(/* CODE HERE */) {
  * @param runners array of runners like the one inside the /data/runners.js file.
  * @returns a number which is the sum of the donations by all runners.
 */
-function tallyUpDonations(/* CODE HERE */) {
+function tallyUpDonations(arr) {
   /* CODE HERE */
+
+  return arr.reduce((tally, runner) => {return tally + runner.donation}, 0);
 }
 
 /////////////// CLOSURES ///////////////
@@ -331,11 +375,18 @@ function tallyUpDonations(/* CODE HERE */) {
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
  * 1. What is the difference between counter1 and counter2?
- * 
+
+ *  counter1 has count defined inside of the function while counter2 defines count outside of the function
+
  * 2. Which of the two uses a closure? How can you tell?
- * 
+
+ *  Counter2. Because it has to refer to the count variable outside of it's local scope.
+
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+
+ * counter 1 would be preferred if we weren't going to use the variable count anywhere else in order to obfuscate it's value from other functions and make it modular.
+      counter 2 would be preferable if we were using the count variable in multiple functions or instances outside of the one function.
+
 */
 
 // counter1 code
@@ -376,7 +427,7 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE */) {
+function counterMakerWithLimit() {
   /* CODE HERE */
 }
 
