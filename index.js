@@ -371,8 +371,11 @@ function counter2() {
  * counter() // should return 0
  * etc
 */
-function counterMakerWithLimit(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
-  /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+function counterMakerWithLimit(countLimit) {
+  let count = 0;
+  return function counter() {
+    count++
+  }
 }
 
 /////////////// END OF CHALLENGE ///////////////
