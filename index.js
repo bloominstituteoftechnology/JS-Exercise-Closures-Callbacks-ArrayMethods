@@ -67,15 +67,7 @@ function processLength(list,callback) {
  * should return 'barbar'.
 */
 function processLastItem(stringList,callback) {
- let Lastitem = [];
- for(let i = 0; i < stringList.length;i++){
-   if(stringList[i] === 'barbar'){
-     Lastitem.push(true)
-   } else {
-     Lastitem.push(false)
-   }
- }
- return callback(stringList);
+ return callback(stringList.slice(-1)[0]);
 }
 
 /**
@@ -119,7 +111,7 @@ function processSum(num1,num2,callback) {
  * should return 1000.
 */
 function processProduct(num1,num2,callback) {
-  return callback(num1,num2)
+  return callback(num1 * num2);
 }
 
 /**
@@ -186,8 +178,17 @@ function lowerCaseStrings(strings) {
  * 
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
-  /* code here */
+function isItAnApple(strings) {
+  let AnApple = [];
+
+  for(let i = 0;i< strings.length;i++){
+    if(strings[i] === 'apple'){
+      AnApple.push(true)
+    } else{
+      AnApple.push(false);
+    }
+  }
+  return AnApple;
 }
 
 /**
@@ -206,8 +207,14 @@ function isItAnApple(/* code here */) {
  * 
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
-  /* code here */
+function removeApple(strings) {
+  let goneapple = [];
+  strings.filter(function(apple) {
+    if (apple !=='apple'){
+      goneapple.push(apple);
+    }
+  });
+  return goneapple;
 }
 
 /**
@@ -225,8 +232,12 @@ function removeApple(/* code here */) {
  * 
  * [2] Invoking `stringSmash` with `['a', 'b', 'c' ]` will return `abc`.
 */
-function stringSmash(/* code here */) {
-  /* code here */
+function stringSmash(strings){
+   let reducer = (accumulator, currentvalue) => accumulator + currentvalue;
+
+   let smash = strings.reduce(reducer);
+
+   return smash;
 }
 
 // A local community center is holding a fund raising 5k fun run and has invited
@@ -244,8 +255,10 @@ function stringSmash(/* code here */) {
  * @returns an array with all the runners' full names in the following format: "Smith, John".
  * The full names appear in the array in the same order the runners appear in the `runners` array.
 */
-function getFullNames(/* CODE HERE */) {
-  /* CODE HERE */
+function getFullNames(runners) {
+let names = runners.map((n) => `${n.last_name}, ${n.first_name}`);
+
+return names;
 }
 
 /**
@@ -260,8 +273,9 @@ function getFullNames(/* CODE HERE */) {
  * @returns an array with all the runners' first names in ALL CAPS.
  * The first names appear in the array in the same order the runners appear in the `runners` array.
 */
-function firstNamesAllCaps(/* CODE HERE */) {
-  /* CODE HERE */
+function firstNamesAllCaps(runners) {
+ let names = runners.map((n) => n.first_name.toUpperCase());
+ return names;
 }
 
 /**
@@ -308,9 +322,18 @@ function tallyUpDonations(/* CODE HERE */) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * In counter 1 all of the code is inside the function (local scope). In counter 2,
+ * the counter 2 function is using the count variable global scope inside it's function.
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * The counter 2 is a closure. You can tell because of the global variable count is being used
+ * inside of the function counter2. unlike the counter 1 function which is doing everything inside
+ * of it's local scope.
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter 1 would be preferable if want to used a set function. counter 2 would be good for functions,
+ * that is always going to have a certain chnage for the variables inside the function.Makes it so that the function
+ * is not hard coded.
  *
 */
 
