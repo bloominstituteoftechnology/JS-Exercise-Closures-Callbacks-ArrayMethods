@@ -132,8 +132,8 @@ function scoreboard(getInningScore, inning, numberOfInnings) {
     homeTeam = homeTeam + inning();
     scoreboardResult[`Inning ${[i]}`] = `Home Team: ${homeTeam} - Away Team: ${awayTeam}`
   }
-  console.log(scoreboardResult)
-  return getInningScore(homeTeam, awayTeam, numberOfInnings)
+  let finalScoreboard = {result: scoreboardResult, final: getInningScore(homeTeam, awayTeam, numberOfInnings)}
+      return finalScoreboard
 }
 
 console.log(scoreboard(getInningScore, inning, 9))

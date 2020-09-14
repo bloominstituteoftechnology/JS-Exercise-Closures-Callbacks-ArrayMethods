@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+A closure is when you have a function which accesses variables or other functions outside of its initial scope. This allows a function to access other functions in javascript from the next level to the global stage.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+The closure used in this code is in the console.log statement where they assessed name from the parameter of the outer function personalDice. You can tell becaue name is not initially in the function scope and must be reached outside of the function scope where the console.log statement lies.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The name will always be the same. The number could change.
+
 c. What is the lexical scope of `newRoll`? 
+
+The lexical scope of newRoll is personalDice(name).
 
 ### Task 3 - Stretch Goals
 
