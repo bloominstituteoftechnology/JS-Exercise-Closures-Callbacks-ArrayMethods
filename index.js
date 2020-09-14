@@ -14,9 +14,9 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
-function processFirstItem(stringList, callback) {
-  return callback(stringList[0])
-}
+// function processFirstItem(stringList, callback) {
+//   return callback(stringList[0])
+// }
 
 // ⭐️ Example Challenge END ⭐️
 
@@ -64,7 +64,7 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(){
+function inning() {
   return Math.floor(Math.random()*3)
 }
 
@@ -87,18 +87,16 @@ finalScore(inning, 9) might return:
 function finalScore(inning, numOfInnings){
   let team1 = 0
   let team2 = 0
+
   for (let i = 0; i < numOfInnings; i++) {
-    team1 = team1 + inning;
+    team1 = team1 + inning();
+    team2 = team2 + inning();
   }
-  for (let i = 1; i <= numOfInnings; i++) {
-    team2 = team2 + inning;
-  }
-  let final = {home: team1,
-               away: team2}
-  return final
+  return {home: team1, away: team2}
+
 }
 
-console.log(finalScore(inning(), 9))
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
@@ -122,16 +120,19 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function getInningScore(inning, numberOfInnings) {
-  return inning * numberOfInnings
-}
+// function getInningScore(homeTeam, awayTeam) {
+//   return `Inning ${numberOfInnings}: homeTeam ${homeTeam} - awayTeam ${awayTeam}`
+// }
 
-console.log(getInningScore(inning(), 5))
+// console.log(getInningScore(inning(), 5))
 
-function scoreboard(getInningScore, inning, numberOfInnings) {
-  let awayTeam = 0
-  let homeTeam = 0
-  let scoreboardResults = {}
-}
+// function scoreboard(getInningScore, inning, numberOfInnings) {
+//   let awayTeam = inning * numberOfInnings
+//   let homeTeam = inning * numberOfInnings
+//   return getInningScore(homeTeam, awayTeam)
+  
+// }
+
+// console.log(scoreboard())
 
 
