@@ -93,10 +93,9 @@ function finalScore(inning, numOfInnings){
     team2 = team2 + inning();
   }
   return {home: team1, away: team2}
-
 }
 
-console.log(finalScore(inning, 9))
+// console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
@@ -120,19 +119,23 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-// function getInningScore(homeTeam, awayTeam) {
-//   return `Inning ${numberOfInnings}: homeTeam ${homeTeam} - awayTeam ${awayTeam}`
-// }
+function getInningScore(homeTeam, awayTeam, numberOfInnings) {
+  return `Final Score: Home Team ${homeTeam} - Away Team ${awayTeam} (${numberOfInnings} innings played)`
+}
 
-// console.log(getInningScore(inning(), 5))
+function scoreboard(getInningScore, inning, numberOfInnings) {
+  let awayTeam = 0
+  let homeTeam = 0
+  let scoreboardResult = {}
+  for (let i = 1; i <= numberOfInnings; i++) {
+    awayTeam = awayTeam + inning();
+    homeTeam = homeTeam + inning();
+    scoreboardResult[`Inning ${[i]}`] = `Home Team: ${homeTeam} - Away Team: ${awayTeam}`
+  }
+  console.log(scoreboardResult)
+  return getInningScore(homeTeam, awayTeam, numberOfInnings)
+}
 
-// function scoreboard(getInningScore, inning, numberOfInnings) {
-//   let awayTeam = inning * numberOfInnings
-//   let homeTeam = inning * numberOfInnings
-//   return getInningScore(homeTeam, awayTeam)
-  
-// }
-
-// console.log(scoreboard())
+console.log(scoreboard(getInningScore, inning, 9))
 
 
