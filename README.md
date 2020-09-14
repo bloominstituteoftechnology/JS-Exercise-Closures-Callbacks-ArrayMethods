@@ -92,31 +92,7 @@ addSix(21); // returns 27
 
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
 
-## Testing FAQ
 
-<img alt='instructions screenshot' src='assets/instructions.png'>
-
-**What are Tests?**
-
-- Lambda School staff members use tests to algorithmically check for required elements in a code file. For example, a test for the question "`console.log()` "hello [name]" using a variable `name` to hold the name" (not a question you will ever be asked, but I digress), might pass **if** your code includes a variable called `name` **and if** that variable was created with `const` **and** **if** `console.log` is called. Additional parameters could require that this code doesn't exceed 2 lines.
-- Your tests work similarly, with more complex conditionals for what is considered passing and what is considered failing. These tests and associated error messages are meant to help you by providing informative error messages that are specific to the requirements of your project.
-- Read more about testing frameworks [here](https://blog.bitsrc.io/top-javascript-testing-frameworks-in-demand-for-2019-90c76e7777e9) including how testing can be used at scale. Lambda School uses Mocha to test in JavaScript.
-
-**How do I run tests in terminal?**
-
-- Run tests by typing `npm run test:watch`.
-- Testing in Terminal can be done in the terminal utility or VS code
-
-**How do I run tests in my browser?**
-
-- Open `index.html`
-- You should see the following at first with failed tests and error messages
-
-<img alt='failing tests' src='assets/FailingTests.png'> 
-
-- Once your code is working you will see tests passing and can click on tests to view the code which made the test pass.
-
-<img alt='passing tests' src='assets/PassingTests.png'> 
 
 ## Resources
 
