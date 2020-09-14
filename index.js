@@ -28,10 +28,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * Counter 1 is two functions nested inside eachother and counter2 is one function. Counter 1 also has the let count variable function scoped so other functions can't access it.
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * counter1 uses a closure because of the function nested inside of it.
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ * Counter1 code is preferable when you don't want any other part of your program to use the code or variables nested inside counter1. Vice versa with counter2
+ * 
 */
 
 // counter1 code
@@ -56,11 +62,14 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
-
-    /*Code Here*/
-
+function inning(inning, min, max){
+    min = Math.ceil(0);
+    max = Math.floor(2);
+    let score = Math.floor(Math.random() * (max - min + 1)) + min;
+    return `In inning ${inning} team A scored ${score}`
 }
+
+console.log(inning(3, 0, 2))
 
 /* Task 3: finalScore()
 
@@ -76,11 +85,24 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(callback, inning){
+  let home = 0;
+  let away = 0;
+  for (let i = 0; i < inning; i++) {
+    home = callback
+  }
+  for (let i = 0; i < inning; i++) {
+    away = callback
+  }
 
-  /*Code Here*/
-
+  const obj = {
+    "Home": home,
+    "Away": away
+  }
+  return obj
 }
+
+console.log(finalScore(inning, 9))
 
 /* Task 4: 
 
