@@ -30,8 +30,10 @@ There are layers upon layers of nested functions within the game of baseball. Yo
 1. Fork repo and add TL as collaborator on Github
 2. Clone _your_ fork (not Lambda's repo by mistake!)
 3. `cd` into your newly cloned repository
-4. Create a new branch by typing `git checkout -b <firstName-lastName>`
-5. Work on your branch, push commits and create PR as usual
+1. Create a new branch by typing `git checkout -b <firstName-lastName>`
+4. Install dependencies by typing `npm install`
+5. Run tests by typing `npm run test:watch`
+6. Work on your branch, push commits and create PR as usual
 
 ### Task 2a - MVP code
 
@@ -42,6 +44,8 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+  closure is what allows a nested function to reach out and access the variables in the outer function.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +67,14 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+it's used in personal dice because it has a function inside a function
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+the function being run is always the same. the number can change because it is is being run a new time each time it's invoked.
+
 c. What is the lexical scope of `newRoll`? 
+personalDice
+
 
 ### Task 3 - Stretch Goals
 
@@ -75,8 +85,8 @@ See if you can complete one or more of the following challenges:
 1. Predict the output of the code below and explain why this is the output using what you learned today. When you're ready for answers, view an explanation [here](https://www.coderbyte.com/algorithm/3-common-javascript-closure-questions
 
 ```js
-(function(){
-  var a = b = 3;
+(function(){ 
+  var a = b = 3; 
 })();
 console.log("a defined? " + (typeof a !== 'undefined'));
 console.log("b defined? " + (typeof b !== 'undefined'));
@@ -92,7 +102,31 @@ addSix(21); // returns 27
 
 3. Research the differences between functional programming and object oriented programming. Then, describe the pros and cons of functional programming vs object-oriented programming. This is a common interview question and great practice!
 
+## Testing FAQ
 
+<img alt='instructions screenshot' src='assets/instructions.png'>
+
+**What are Tests?**
+
+- Lambda School staff members use tests to algorithmically check for required elements in a code file. For example, a test for the question "`console.log()` "hello [name]" using a variable `name` to hold the name" (not a question you will ever be asked, but I digress), might pass **if** your code includes a variable called `name` **and if** that variable was created with `const` **and** **if** `console.log` is called. Additional parameters could require that this code doesn't exceed 2 lines.
+- Your tests work similarly, with more complex conditionals for what is considered passing and what is considered failing. These tests and associated error messages are meant to help you by providing informative error messages that are specific to the requirements of your project.
+- Read more about testing frameworks [here](https://blog.bitsrc.io/top-javascript-testing-frameworks-in-demand-for-2019-90c76e7777e9) including how testing can be used at scale. Lambda School uses Mocha to test in JavaScript.
+
+**How do I run tests in terminal?**
+
+- Run tests by typing `npm run test:watch`.
+- Testing in Terminal can be done in the terminal utility or VS code
+
+**How do I run tests in my browser?**
+
+- Open `index.html`
+- You should see the following at first with failed tests and error messages
+
+<img alt='failing tests' src='assets/FailingTests.png'> 
+
+- Once your code is working you will see tests passing and can click on tests to view the code which made the test pass.
+
+<img alt='passing tests' src='assets/PassingTests.png'> 
 
 ## Resources
 
