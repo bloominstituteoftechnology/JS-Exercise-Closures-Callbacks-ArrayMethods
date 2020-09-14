@@ -30,10 +30,8 @@ There are layers upon layers of nested functions within the game of baseball. Yo
 1. Fork repo and add TL as collaborator on Github
 2. Clone _your_ fork (not Lambda's repo by mistake!)
 3. `cd` into your newly cloned repository
-1. Create a new branch by typing `git checkout -b <firstName-lastName>`
-4. Install dependencies by typing `npm install`
-5. Run tests by typing `npm run test:watch`
-6. Work on your branch, push commits and create PR as usual
+4. Create a new branch by typing `git checkout -b <firstName-lastName>`
+5. Work on your branch, push commits and create PR as usual
 
 ### Task 2a - MVP code
 
