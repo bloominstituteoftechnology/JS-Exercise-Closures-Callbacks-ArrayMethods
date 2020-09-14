@@ -368,3 +368,5 @@ if (typeof exports !== 'undefined') {
   if (tallyUpDonations) { module.exports.tallyUpDonations = tallyUpDonations }
   if (counterMakerWithLimit) { module.exports.counterMakerWithLimit = counterMakerWithLimit }
 }
+
+//test
