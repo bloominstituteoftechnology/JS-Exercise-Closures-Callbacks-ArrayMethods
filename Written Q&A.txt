@@ -8,18 +8,8 @@ A closure is something that gives you access to an outside functions'
 scope from inside an inner function. 
 
 -------------------------------------------------------------------
--------------------------------------------------------------------
--------------------------------------------------------------------
--------------------------------------------------------------------
-
-
-
 
 >> 2. Study the following code, then answer the questions below.
-
-
-
-
 
 ```js
 function personalDice(name){
@@ -41,13 +31,17 @@ dansRoll();
 
 >> a. Where is closure used in this code? How can you tell?
 
+-You can find closure in the function one (Line 15). You can tell because 
+-the next line has a return function, and this closes the function. 
+
+
 
 
 -------------------------------------------------------------------
 
-
-
 >> b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+-Counter one would be ideal if there were multiple varibles but only one is intended to print on the console. 
+-Counter two would be ideal if it were used to count random objects.
 
 
 
