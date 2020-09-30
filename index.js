@@ -14,6 +14,7 @@
  * Invoking `processFirstItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'foofoo'.
 */
+
 function processFirstItem(stringList, callback) {
   return callback(stringList[0])
 }
@@ -21,20 +22,46 @@ function processFirstItem(stringList, callback) {
 // ⭐️ Example Challenge END ⭐️
 
 
-///// M V P ///////
+
+
+
+
+//----------------------------------START HERE---------------------------------//
+//-------------------------------------MVP-------------------------------------//
+
 
 /* Task 1: `counterMaker`
+ *
  * Study the code for counter1 and counter2. Answer the questions below.
  * 
+ * //-----------------------------------------------------------------------------//
+
+ * 
  * 1. What is the difference between counter1 and counter2?
+ *
+ * The difference between counter1 and counter2:
+ * -----------------------------------------------
+//---// counter1 is requesting a new function that will return the count++ variable 1 # or more.
+//---// counter2 is requesting for a return of the count++ variable 1 # higher as well, but with in inner scope of the original function.
+
+ * 
+ *
+ *
  * 
  * 2. Which of the two uses a closure? How can you tell?
- * 
+ *
+ *
+ *
+ *
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ *
+ *
+ *
  *
 */
 
 // counter1 code
+
 function counterMaker() {
   let count = 0;
   return function counter() {
@@ -44,12 +71,20 @@ function counterMaker() {
 
 const counter1 = counterMaker();
 
+
+
+
 // counter2 code
+
 let count = 0;
 
 function counter2() {
   return count++;
 }
+
+//-----------------------------------------------------------------------------//
+
+
 
 
 /* Task 2: inning() 
@@ -61,6 +96,12 @@ function inning(/*Code Here*/){
     /*Code Here*/
 
 }
+
+
+
+//-----------------------------------------------------------------------------//
+
+
 
 /* Task 3: finalScore()
 
@@ -81,6 +122,11 @@ function finalScore(/*code Here*/){
   /*Code Here*/
 
 }
+
+
+//-----------------------------------------------------------------------------//
+
+
 
 /* Task 4: 
 
