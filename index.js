@@ -132,8 +132,7 @@ function finalScore(inning, num) {
     Away += inning();
   }
 
-  return {'home': Home, 'away': Away
-  }
+  return {'home': Home, 'away': Away}
 }
   
 console.log(finalScore(inning, 2));
@@ -172,8 +171,8 @@ function scoreboard(finalScore, inning, number) {
 
     for(let i = 1; i <= number; i++){
 
-      Home += finalScore(inning, i).home;
-      Away += finalScore(inning, i).away;
+      Home += finalScore(inning, i).away;
+      Away += finalScore(inning, i).home;
 
       if(i == 1){console.log(`${i}st inning ${Away}-${Home}`)}
       else if(i == 2){console.log(`${i}nd inning ${Away}-${Home}`)}
