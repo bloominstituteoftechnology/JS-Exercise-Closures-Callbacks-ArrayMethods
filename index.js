@@ -152,7 +152,7 @@ Create a function called `scoreboard` that accepts the following parameters:
 (2) Callback function `inning`
 (2) A number of innings
 
-and returns the score at each pont in the game, like so:
+and returns the score at each point in the game, like so:
 
 1st inning: awayTeam - homeTeam
 2nd inning: awayTeam - homeTeam
@@ -166,8 +166,24 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard(finalScore, inning, number) {
+  let Home = 0;
+  let Away = 0;
+
+    for(let i = 1; i <= number; i++){
+
+      Home += finalScore(inning, i).home;
+      Away += finalScore(inning, i).away;
+
+      if(i == 1){console.log(`${i}st inning ${Away}-${Home}`)}
+      else if(i == 2){console.log(`${i}nd inning ${Away}-${Home}`)}
+      else if(i == 3){console.log(`${i}rd inning ${Away}-${Home}`)
+    }else{
+      
+      console.log(`${i}th inning ${Away}-${Home}`);
+      }
+    }
+    return `final score ${Away}-${Home}`
 }
 
-
+console.log(scoreboard(finalScore, inning, 9));
