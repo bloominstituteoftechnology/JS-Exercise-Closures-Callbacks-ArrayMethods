@@ -22,49 +22,29 @@ A scoreboard in a major league stadium looks something like this. In fact, the s
 ![Fenway Scoreboard](https://storage.googleapis.com/afs-prod/media/media:e959506330fd4e5890023c93cfbaac55/800.jpeg)
 
 There are layers upon layers of nested functions within the game of baseball. Your challenge today will be to work through tasks associated with these layers, and ultimately to produce a scoreboard that logs in the console.
-
+ 
 ## Instructions
 
 ### Task 1 - Set Up Project and Tests
 
-1. Fork repo and add TL as collaborator on Github
-2. Clone _your_ fork (not Lambda's repo by mistake!)
-3. `cd` into your newly cloned repository
-4. Create a new branch by typing `git checkout -b <firstName-lastName>`
-5. Work on your branch, push commits and create PR as usual
+[x]  1. Fork repo and add TL as collaborator on Github 
+[x]  2. Clone _your_ fork (not Lambda's repo by mistake!)
+[x]  3. `cd` into your newly cloned repository
+[x]  4. Create a new branch by typing `git checkout -b <firstName-lastName>`
+[x]  5. Work on your branch, push commits and create PR as usual
 
 ### Task 2a - MVP code
 
-Find the file `index.js` and complete the tasks until your tests are passing.
+Find the file `index.js` and complete the tasks until your tests are passing.sd
 
 ### Task 2b - Written questions
 
 Edit the `ReadMe` file with your answers.
 
-1. In your own words, define closure (1-2 sentences).
-2. Study the following code, then answer the questions below.
 
-```js
-function personalDice(name){
-  return function(){
-      // generate random number between 1 and 6
-    const newRoll = Math.floor(Math.random() * 6);
-    console.log(`${name} rolled a ${newRoll}`)
-  }
-}
-
-const dansRoll = personalDice("Dan");
-
-const zoesRoll = personalDice("Zoe");
+>> >> >> PLEASE SEE 'Written Q&A.txt' for Written question answers.
 
 
-dansRoll();
-dansRoll();
-```
-
-a. Where is closure used in this code? How can you tell?
-b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
-c. What is the lexical scope of `newRoll`? 
 
 ### Task 3 - Stretch Goals
 
@@ -96,7 +76,7 @@ addSix(21); // returns 27
 
 ## Resources
 
-📚 [Scope and Closures Guide](https://css-tricks.com/javascript-scope-closures/)
+📚 [Scope and Closures Guide](https://css-tricks.com/javascript-scope-closures/)       
 
 🧠 ["I never Understood Closures" Blog](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
 
