@@ -28,10 +28,20 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * 
+ * Counter 1 has a local variable inside its function that can not be accessed outside the function.
+ * Counter 2 uses a global variable inside its function to 
+ *
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * Both have closure. The first has a variable that is local which can run the function.
+ * The second uses a global variable which creates the closure. So both have closure.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
- *
+ *   
+ *  Counter1 would be preferable if the count variable is not to be used ever again in the script. We want
+ * to keep the code as clean as possible. We don't want a variable hanging out with no purpose. 
+ * The counter2 code would be useful if we plan on using the count variable down the line in our code.
 */
 
 // counter1 code
@@ -57,10 +67,12 @@ function counter2() {
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(/*Code Here*/){
+  const randomScore = Math.floor(Math.random() * 3);
+  return randomScore;
+ }
 
-    /*Code Here*/
+console.log(inning());
 
-}
 
 /* Task 3: finalScore()
 
@@ -76,9 +88,22 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore( ){
 
-  /*Code Here*/
+  let gameScore = [
+    {
+      home: home,
+      away: away,
+    }
+
+  ]
+  return gameScore;
+};
+
+  console.log(finalScore());
+
+
+  
 
 }
 
