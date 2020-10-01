@@ -22,7 +22,7 @@ A scoreboard in a major league stadium looks something like this. In fact, the s
 ![Fenway Scoreboard](https://storage.googleapis.com/afs-prod/media/media:e959506330fd4e5890023c93cfbaac55/800.jpeg)
 
 There are layers upon layers of nested functions within the game of baseball. Your challenge today will be to work through tasks associated with these layers, and ultimately to produce a scoreboard that logs in the console.
-
+ 
 ## Instructions
 
 ### Task 1 - Set Up Project and Tests
@@ -35,7 +35,7 @@ There are layers upon layers of nested functions within the game of baseball. Yo
 
 ### Task 2a - MVP code
 
-Find the file `index.js` and complete the tasks until your tests are passing.
+Find the file `index.js` and complete the tasks until your tests are passing.sd
 
 ### Task 2b - Written questions
 
@@ -76,7 +76,7 @@ addSix(21); // returns 27
 
 ## Resources
 
-📚 [Scope and Closures Guide](https://css-tricks.com/javascript-scope-closures/)
+📚 [Scope and Closures Guide](https://css-tricks.com/javascript-scope-closures/)       
 
 🧠 ["I never Understood Closures" Blog](https://medium.com/dailyjs/i-never-understood-javascript-closures-9663703368e8)
 
