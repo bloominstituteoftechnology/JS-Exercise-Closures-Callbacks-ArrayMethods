@@ -34,8 +34,7 @@ function processFirstItem(stringList, callback) {
  *
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * Both have closure. The first has a variable that is local which can run the function.
- * The second uses a global variable which creates the closure. So both have closure.
+ * The 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *   
@@ -88,24 +87,28 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore( ){
-
-  let gameScore = [
-    {
-      home: home,
-      away: away,
-    }
-
-  ]
-  return gameScore;
-};
-
-  console.log(finalScore());
-
-
+function finalScore(inning, num){
+  
+  let score1 = 0;
+  let score2 = 0;
+ 
+  for(let i = 0; i < num; i++){
+    score1 = score1 + inning()
+    score2 = score2 + inning()
+  }
   
 
-}
+  let inningCount =
+    {
+      home: score1,
+      away: score2,
+    }
+
+  return inningCount;
+};
+
+console.log(finalScore(inning, 9))
+  
 
 /* Task 4: 
 
