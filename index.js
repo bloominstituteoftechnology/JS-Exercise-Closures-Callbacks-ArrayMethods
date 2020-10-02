@@ -34,7 +34,9 @@ function processFirstItem(stringList, callback) {
  *
  * 2. Which of the two uses a closure? How can you tell?
  * 
- * The 
+ * The second uses a closure. It has a variable that it calls upon that is directly inside its function,
+ * and it also executes the function with return. The first one does not complete a function as there is
+ * no return command. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *   
@@ -132,8 +134,15 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
-}
+function scoreboard(getInningScore, whichInning, num) {
+  let twoScores = [];
+  for(let i = 0; i < num; i++){
+    twoScores.push(`Innings ${i+1}: ${getInningScore(whichInning, 1)}`);
+  }
+  return twoScores;
+ }
+
+console.log(scoreboard(finalScore, inning, 9));
+
 
 
