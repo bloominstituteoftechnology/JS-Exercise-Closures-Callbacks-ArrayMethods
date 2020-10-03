@@ -42,6 +42,9 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+
+Whenever you create a function within another function, this is a closure.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +66,12 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+  return function(){ on line 53 because it will create a function within the function.
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+The phrase "Dan rolled a" stays the same. The number he rolls generally changes.
+
 c. What is the lexical scope of `newRoll`? 
+ The lexical scope of newRoll is it can reach out to the outerfunction and even globally, but newRoll cannot be accessed outside of its function.
 
 ### Task 3 - Stretch Goals
 
