@@ -28,9 +28,14 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter2 will reset every time it is called. Also the variable in counter2 is global. counter1 has count as a private variable and will keep the count everytime it is called.
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * counter one due to the function within the function.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter1 is generally preferable because it is less memory due to being private. It also retains memeory. However, if you need the count to be reset every time, counter2 would be better.
  *
 */
 
