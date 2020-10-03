@@ -131,19 +131,22 @@ function getOrdLabel(num) {
   }
 }
 
-function scoreboard(callback, callback2, numOfInnings){
-  let home = 0;
-  let away = 0;
-  for (let i = 1; i <= numOfInnings; i++) {
-    home += callback();
-    away += callback();
-    console.log(`${getOrdLabel(i)} inning: Away: ${away} - Home: ${home}`);
-  }
-  return {
-    "Home": home,
-    "Away": away,
-  }
-    return callback2();
-}
+function scoreboard(callback, numOfInnings){
+  let scores = { away: 0, home: 0, awayFinal: 0, homeFinal: 0 }
 
-scoreboard(inning, finalScore, 9);                                                       
+
+  for (let i = 1; i <= numOfInnings; i++) {
+    scores.home = callback();
+    scores.away = callback();
+    scores.homeFinal += scores.home
+    scores.awayFinal += scores.away
+
+    console.log(`${getOrdLabel(i)} inning: Away: ${scores.away} - Home: ${scores.home}`);
+  }
+  console.log(scores.homeFinal,scores.awayFinal)
+ 
+
+}
+scoreboard(inning,9);
+
+                                                       
