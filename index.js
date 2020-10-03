@@ -65,6 +65,7 @@ Write a function called `inning` that generates a random number of points that a
   function inning(){
     let scoreInning = Math.floor(Math.random() * 3);
     return scoreInning;
+  }
   
 
 /* Task 3: finalScore()
@@ -81,11 +82,20 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(cb, num) {
+  let home = 0;
+  let away = 0;
+  for (let i = 1; i <= num; i++) {
+    home += cb();
+    away += cb();
+  }
+  return {
+    "Away": away,
+    "Home": home,
+  }
 }
+
+finalScore(inning, 9);
 
 /* Task 4: 
 
