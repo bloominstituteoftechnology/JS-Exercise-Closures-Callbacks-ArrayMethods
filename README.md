@@ -63,8 +63,17 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+Closure is used within the anonymous function, as well as the personalDice function. The anonymous function has the constant newRoll within its scope, the function personalDice is able to reach out and pull the name parameter from dansRoll and zoesRoll constants.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+The name will remain the same every time it is called. The roll is random and can change on each subsequent call.
+
+
 c. What is the lexical scope of `newRoll`? 
+
+newRoll has functional scope, and is only accessible to the anonymous function it resides within.
 
 ### Task 3 - Stretch Goals
 
