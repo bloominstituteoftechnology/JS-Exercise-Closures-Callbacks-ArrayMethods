@@ -28,9 +28,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * counter2 will reset every time it is called. Also the variable in counter2 is global. counter1 has count as a private variable and will keep the count 
+ * everytime it is called.
  * 2. Which of the two uses a closure? How can you tell?
  * 
+ * counter one due to the function within the function.
+ * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
+ * 
+ * counter1 is generally preferable because it is less memory due to being private. It also retains memeory. However, if you need the count to be reset every time, 
+ * counter2 would be better.
  *
 */
 
@@ -56,11 +63,11 @@ function counter2() {
 
 Write a function called `inning` that generates a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
-function inning(/*Code Here*/){
 
-    /*Code Here*/
-
-}
+  function inning(){
+    return Math.floor(Math.random() * 3);
+  }
+  
 
 /* Task 3: finalScore()
 
@@ -76,11 +83,20 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
-
-  /*Code Here*/
-
+function finalScore(cb, num) {
+  let home = 0;
+  let away = 0;
+  for (let i = 1; i <= num; i++) {
+    home += cb();
+    away += cb();
+  }
+  return {
+    "Away": away,
+    "Home": home,
+  }
 }
+
+finalScore(inning, 9);
 
 /* Task 4: 
 
@@ -104,8 +120,26 @@ and returns the score at each pont in the game, like so:
 
 Final Score: awayTeam - homeTeam */
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+
+function inning(){
+  return Math.floor(Math.random() * 3);
 }
 
+function scoreboard(getInningScoreCB, inningCB, num) {
+let finalScore = {away: 0, home:0, awayFinal: 0, homeFinal: 0};
+for (let i = 0; i <= num; i++) {
+finalScore.away = inningCB();
+finalScore.home = inningCB();
+finalScore.awayFinal += finalScore.away;
+finalScore.homeFinal += finalScore.home; 
+getInningScoreCB(i, finalScore);
+} 
+return finalScore;
+}
 
+function lastScore(inning, scoreboard) {
+console.log(`Inning ${inning}: Home- ${scoreboard.home}  Away- ${scoreboard.away}`)
+if (inning === 9)
+console.log (`Final Score: Away- ${scoreboard.awayFinal} Home- ${scoreboard.homeFinal}`);
+}
+console.log (scoreboard(lastScore, inning, 9));
