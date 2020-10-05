@@ -9,7 +9,13 @@ The module challenge is the afternoon project or assignment that students work t
 ## Objectives
 
 - Explain function scope
+
+*Function Scope is when your variable is defined inside of your function only, and it can not be found anywhere else in your code.  You can use other variables from outside the function but nothing on the outside can use whats inside.
+
 - Describe what closure is, how closure is created in a program and why it is important to understand closures in JavaScript  
+
+*
+
 
 ## Introduction
 
@@ -42,6 +48,8 @@ Find the file `index.js` and complete the tasks until your tests are passing.
 Edit the `ReadMe` file with your answers.
 
 1. In your own words, define closure (1-2 sentences).
+- closure allows your nested funtions to go out and get variables in functions outside the nested function.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -63,8 +71,16 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+-The closure is inside of the function "personalDice", you can tell because it is using a function inside of another function.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+-It is being ran the same each time it is called. The only difference between each time it is called would be that each call will be completely random and may never be the same out of 6 rolls.
+
 c. What is the lexical scope of `newRoll`? 
+
+-"personalDice"
 
 ### Task 3 - Stretch Goals
 
